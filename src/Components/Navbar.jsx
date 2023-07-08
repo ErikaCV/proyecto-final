@@ -8,6 +8,7 @@ import Logo from '../assets/images/logo2.png'
 import { Image,  } from 'react-bootstrap';
 import { FaSistrix } from "react-icons/fa";
 import { FcManager } from "react-icons/fc";
+import { IconCart } from './IconCart';
 
 
 function NavScrollExample() {
@@ -45,6 +46,7 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <IconCart  />
            <Button variant="danger" className='mt-2 btnPrime  rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
             
             <Nav.Link href="#" disabled className='bg-light border rounded-circle'>
@@ -57,6 +59,7 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 }
 
