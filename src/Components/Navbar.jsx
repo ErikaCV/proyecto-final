@@ -4,22 +4,21 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logo from '../assets/images/logo2.png'
+import { Image,  } from 'react-bootstrap';
+import { FaSistrix } from "react-icons/fa";
+import { FcManager } from "react-icons/fc";
+
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
+      <Nav.Link href="#action1"><Image src={Logo} width={80} className="" /></Nav.Link>
+      
+   
+        <Form className="d-flex bg-light border border-withe rounded-pill">
+        <NavDropdown title="Categories" id="navbarScrollingDropdown" className='ps-2 pt-2'>
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -29,19 +28,32 @@ function NavScrollExample() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
+              placeholder=""
+              className=" border-0 bg-light"
+              aria-label="Search" 
             />
-            <Button variant="outline-success">Search</Button>
+            <FaSistrix className=' fs-1 pe-3 ' />
+           
           </Form>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll" className='justify-content-end'>
+        <Navbar.Text>
+        <Nav
+            className="me-auto my-2 my-lg-0 "
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+           <Button variant="danger" className='mt-2 btnPrime  rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
+            
+            <Nav.Link href="#" disabled className='bg-light border rounded-circle'>
+              <FcManager className='fs-1' /> 
+            </Nav.Link>
+          </Nav>
+  
+          </Navbar.Text>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>
