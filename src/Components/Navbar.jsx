@@ -9,11 +9,13 @@ import { Image,  } from 'react-bootstrap';
 import { FaSistrix } from "react-icons/fa";
 import { FcManager } from "react-icons/fc";
 import { IconCart } from './IconCart';
+import { SearchBar } from './SearchBar';
 
 
 function NavScrollExample() {
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
+      
       <Container fluid>
       <Nav.Link href="#action1"><Image src={Logo} width={80} className="" /></Nav.Link>
       
@@ -29,12 +31,7 @@ function NavScrollExample() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Form.Control
-              type="search"
-              placeholder=""
-              className=" border-0 bg-light"
-              aria-label="Search" 
-            />
+            <SearchBar/>
             <FaSistrix className=' fs-1 pe-3 ' />
            
           </Form>

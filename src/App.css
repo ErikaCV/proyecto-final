@@ -42,3 +42,9 @@
 .btnPrime{
   background-color: #b91817;
 }
+
+.boxSearch{
+  margin-top: 40px;
+    position: absolute;
+    width: 200px;
+  }
