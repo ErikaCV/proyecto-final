@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  
+ 
   text-align: center;
 }
 
@@ -40,3 +39,34 @@
 .read-the-docs {
   color: #888;
 }
+.btnPrime{
+  background-color: #b91817;
+}
+
+/**NavBar**/
+.boxSearch{
+  margin-top: 40px;
+    position: absolute;
+    width: 200px;
+  }
+  .iconCart{
+    background-color: #b91817;
+  
+  }
+  .resumenCarrito {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /**
+    .tabPages{
+    background-color: #e63e11;
+  }
+**/
