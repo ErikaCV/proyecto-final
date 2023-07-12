@@ -1,18 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import NavScrollExample from './Components/Navbar'
-import UncontrolledExample from './Components/TabPages'
+import { useCompra } from './Utils/Function'
+import NavPages from './Components/TabPages'
+import NavS from './Components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { comprar } = useCompra();
 
   return (
     <>
-    <NavScrollExample></NavScrollExample>
-    <UncontrolledExample></UncontrolledExample>
-     
+    <NavS/>
+    <NavPages/>
+    
     </>
   )
 }

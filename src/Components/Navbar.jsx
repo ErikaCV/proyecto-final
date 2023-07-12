@@ -12,7 +12,7 @@ import { IconCart } from './IconCart';
 import { SearchBar } from './SearchBar';
 
 
-function NavScrollExample() {
+function NavS() {
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       
@@ -44,7 +44,7 @@ function NavScrollExample() {
             navbarScroll
           >
             <IconCart  />
-           <Button variant="danger" className='mt-2 btnPrime  rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
+           <Button variant="danger" className='mt-2   rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
             
             <Nav.Link href="#" disabled className='bg-light border rounded-circle'>
               <FcManager className='fs-1' /> 
@@ -60,4 +60,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample;
+export default NavS;
