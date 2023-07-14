@@ -7,10 +7,18 @@ export const useCompra = () => {
     setCantidadProductos(cantidadProductos + 1);
   };
 
-  
-
-  return {
+   return {
     cantidadProductos,
     comprar
   };
 };
+
+
+
+const getData = async (URL) => {
+  const response = await fetch(URL);
+  const data = await response.json();
+
+  return data;
+};
+export { getData };
