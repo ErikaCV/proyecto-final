@@ -1,15 +1,18 @@
+
 import './App.css'
-import Slider  from './components/Slider'
-import Sales from './components/sales'
-import Banner from './components/Banner'
+import { useCompra } from './Utils/Function'
+import NavPages from './Components/TabPages'
+import NavS from './Components/Navbar'
 
 function App() {
+  const { comprar } = useCompra();
+
   return (
-   <div>
-    <Slider />
-    <Sales />
-    <Banner />
-   </div>
+    <>
+    <NavS/>
+    <NavPages/>
+    
+    </>
   )
 }
 
