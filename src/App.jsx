@@ -1,8 +1,8 @@
 
 import './App.css'
 import { useCompra } from './Utils/Function'
-import NavPages from './Components/TabPages'
-import NavS from './Components/Navbar'
+import NavPages from './components/TabPages'
+import NavS from './components/Navbar'
 
 function App() {
   const { comprar } = useCompra();
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <NavS/>
-    <NavPages/>
+    <NavPages/> 
     
     </>
   )

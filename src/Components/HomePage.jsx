@@ -1,9 +1,15 @@
+import Slider  from './Slider'
+import Sales from './Sales'
+import Banner from './Banner'
+
 function HomePage () {
-    return(
-        <>
-        <h1 className=" bg-danger">Soy el Inicio</h1>
-        </>
-    )
+    return (
+        <div>
+         <Slider />
+         <Sales />
+         <Banner />
+        </div>
+       )
 }
 
 export default HomePage
