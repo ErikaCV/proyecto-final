@@ -15,7 +15,7 @@ export const USER = [
         profession: "Programming Student",
         image: LuisImage,
         description:"Estudiante de programación FullStack",
-        testimonial: "Pude aprender lo suficiente para desembolverme correctamente en la industria"
+        testimonial: "Pude aprender lo suficiente para desenvolverme correctamente en la industria"
 
     },
     {
