@@ -1,56 +1,57 @@
-
+import { useContext, useState } from 'react';
+import { ProductContext } from './ProductContext';
 import Form from 'react-bootstrap/Form';
-import { useState } from "react";
-import { ApiPrueba } from "./ApiPrueba";
+import { Link } from 'react-router-dom';
 
+export const SearchBar = () => {
+  const products = useContext(ProductContext);
+  const [search, setSearch] = useState('');
+  const [resultSearch, setResultSearch] = useState([]);
 
-export const SearchBar = () =>{
-    const [Search, setSearch] = useState ('')
-    const [ResultSearch, setResultSearch] = useState([])
+  const handleSearch = (event) => {
+    const value = event.target.value.toLowerCase().trim();
+    setSearch(value);
 
-    const Prueba = ApiPrueba
+    const productosFiltrados = products.filter((producto) =>
+      producto.title.toLowerCase().includes(value)
+    );
 
-  
-         
-    const handleSearch = (event) =>{
-        const value = event.target.value.toLowerCase().trim()
-        setSearch(value);
+    setResultSearch(productosFiltrados);
+  };
 
-        const productosFiltrados = Prueba.filter(producto =>
-            producto.title.toLocaleLowerCase().includes(value)
-            );
+  const handleCloseResults = () => {
+    setSearch('');
+    setResultSearch([]);
+  };
 
-        setResultSearch(productosFiltrados)
-    }
+  const shouldShowResults = search !== '';
 
-    const shouldShowResults = Search !== '';
-    
-return(
+  return (
     <>
-    <Form.Control
-    onChange={handleSearch}
-    type="search"
-    placeholder=""
-    className=" border-0 bg-light"
-    aria-label="Search" 
-  />
-        {shouldShowResults && (
-        <div className=" bg-white rounded text-center  boxSearch">
-        {ResultSearch.length > 0 ? (
-            <ul>
-            {ResultSearch.map((product, index) => (
-            <li key={index}>{product.title}</li>
-          ))}
-          </ul>):(
+      <Form.Control
+        value={search}
+        onChange={handleSearch}
+        type="search"
+        placeholder=""
+        className="border-0 bg-light"
+        aria-label="Search"
+      />
+      {shouldShowResults && (
+        <div className="bg-white rounded text-center boxSearch result-container">
+          {resultSearch.length > 0 ? (
+            resultSearch.map((product) => (
+              <p key={product.id}>
+                <Link to={`/products/${product.id}`} onClick={handleCloseResults}>
+                  {product.title}
+                </Link>
+                <hr />
+              </p>
+            ))
+          ) : (
             <p>No existe</p>
-          )} 
-        
-    
-         </div>)}
-
-
-</>
-  
-);
-
-}
+          )}
+        </div>
+      )}
+    </>
+  );
+};

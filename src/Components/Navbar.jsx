@@ -10,26 +10,32 @@ import { FaSistrix } from "react-icons/fa";
 import { FcManager } from "react-icons/fc";
 import { IconCart } from './IconCart';
 import { SearchBar } from './SearchBar';
+import { Link } from 'react-router-dom';
 
 
-function NavS() {
+function NavBar(Products) {
+  console.log("navbar", Products)
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       
       <Container fluid>
-      <Nav.Link href="#action1"><Image src={Logo} width={80} className="" /></Nav.Link>
+      <Link to="/"><Image src={Logo} width={80} className="" /></Link>
       
    
         <Form className="d-flex bg-light border border-withe rounded-pill">
         <NavDropdown title="Categories" id="navbarScrollingDropdown" className='ps-2 pt-2'>
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+                             <Link to="/category/Women's Clothing">
+                                <Nav>Women&apos;s Clothing</Nav>
+                            </Link>
+                            <Link to="/category/Men's Clothing">
+                                <Nav>Men&apos;s Clothing</Nav>
+                            </Link>
+                            <Link to="/category/Jewelery">
+                                <Nav>Jewelery</Nav>
+                            </Link>
+                            <Link to="/category/Electronics">
+                                <Nav>Electronics</Nav>
+                            </Link>
             </NavDropdown>
             <SearchBar/>
             <FaSistrix className=' fs-1 pe-3 ' />
@@ -60,4 +66,4 @@ function NavS() {
   );
 }
 
-export default NavS;
+export default NavBar;

@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import HomePage from './HomePage';
-import { ShopPage } from './ShopPage';
+import { ShopPage } from "../Components/ShopPage";
 import AboutPage from './AboutPage';
 import { ContactPage } from './ContactPage';
+import { ProductDetailContainer } from "../Components/ProductDetailContainer";
 
 function NavPages() {
   const [activeTab, setActiveTab] = useState('home');
@@ -15,7 +16,7 @@ function NavPages() {
   };
 
   return (
-    <Router>
+  <>
       <Tabs
         activeKey={activeTab}
         onSelect={handleTabSelect}
@@ -30,10 +31,12 @@ function NavPages() {
     <Routes>
       <Route path="/" exact element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
+      <Route path="/products/:id" element={<ProductDetailContainer/>} />
+      <Route path="/category/:category" element={<ShopPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       </Routes>
-    </Router>
+   </>
   );
 }
 
