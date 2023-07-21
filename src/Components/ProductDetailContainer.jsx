@@ -8,6 +8,8 @@ export const ProductDetailContainer = () => {
   const location = useLocation();
   const products = useContext(ProductContext);
 
+  console.log("container", products)
+
   // Función para filtrar el producto por ID
   const filterProductById = (productId) => {
     return products.find((product) => product.id === parseInt(productId));

@@ -6,6 +6,9 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  
   const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
 
   useEffect(() => {
@@ -22,6 +25,9 @@ export const ProductProvider = ({ children }) => {
 
     fetchProducts();
   }, []);
+
+  
+  
 
   return (
     <ProductContext.Provider value={products}>{children}</ProductContext.Provider>
