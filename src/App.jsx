@@ -5,17 +5,16 @@ import { ProductProvider } from './components/ProductContext'
 import NavBar from './components/Navbar'
 
 
+
 function App() {
 
 
   return (
     <>
     <ProductProvider >
-    <NavBar/>
-    <NavPages/> 
-
-    </ProductProvider>
-    
+    <NavBar />
+    <NavPages /> 
+    </ ProductProvider>
     </>
   )
 }
