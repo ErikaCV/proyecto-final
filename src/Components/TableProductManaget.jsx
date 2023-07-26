@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Button, Table, Image, Form, Modal } from 'react-bootstrap';
+import { Button, Table, Image, Form, Modal} from 'react-bootstrap';
 import { ProductContext } from './ProductContext';
+import { CiEdit, CiSquareRemove } from "react-icons/ci";
 
 export const TableProductManaget = () => {
     const getProductContextValue = useContext(ProductContext);
@@ -74,9 +75,11 @@ export const TableProductManaget = () => {
               <td>{product.description}</td>
               <td>${product.price}</td>
               <td>{product.category}</td>
-              <td>
-                <Button variant="primary" onClick={() => handleEditProduct(product.id)}>Editar</Button>{' '}
-                <Button variant="danger" onClick={() => handleDeleteProduct(product.id)}>Eliminar</Button>
+              <td className=''>
+                <div>
+                <CiEdit className='fs-2 text-success IconManage'  onClick={() => handleEditProduct(product.id)} />
+                <CiSquareRemove className='fs-2 text-danger IconManage' onClick={() => handleDeleteProduct(product.id)} />
+                </div>
               </td>
             </tr>
           ))}

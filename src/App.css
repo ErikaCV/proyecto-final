@@ -402,3 +402,10 @@
 }
 
 /**TableProductManaget**/
+.IconManage{
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+.IconManage:hover{
+  transform: scale(1.2);
+}
