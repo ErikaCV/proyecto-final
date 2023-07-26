@@ -6,6 +6,7 @@ import NavBar from './components/Navbar'
 import { CartProvider } from './Components/CartContext'
 
 
+
 function App() {
 
 
