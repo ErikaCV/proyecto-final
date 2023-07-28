@@ -7,6 +7,7 @@ import { ShopPage } from "../Components/ShopPage";
 import AboutPage from './AboutPage';
 import { ContactPage } from './ContactPage';
 import { ProductDetailContainer } from "../Components/ProductDetailContainer";
+import LoginForm from './LoginForm';
 
 function NavPages() {
   const [activeTab, setActiveTab] = useState('home');
@@ -35,6 +36,7 @@ function NavPages() {
       <Route path="/category/:category" element={<ShopPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/login" element={<LoginForm />} />
       </Routes>
    </>
   );

@@ -50,7 +50,7 @@ function NavBar(Products) {
             navbarScroll
           >
             <IconCart  />
-           <Button variant="danger" className='mt-2   rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
+          <Link to='/login'> <Button variant="danger" className='mt-2   rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}</Link>
             
             <Nav.Link href="#" disabled className='bg-light border rounded-circle'>
               <FcManager className='fs-1' /> 
