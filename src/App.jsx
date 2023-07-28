@@ -1,9 +1,10 @@
 
 import './App.css'
 import NavPages from './components/TabPages'
-import { ProductProvider } from './components/ProductContext'
+import { ProductProvider } from './Components/ProductContext'
 import NavBar from './components/Navbar'
 import { CartProvider } from './Components/CartContext'
+import Footer from './Components/Footer'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <NavPages/> 
     </CartProvider>
     </ProductProvider>
+    <Footer/>
     
     </>
   )
