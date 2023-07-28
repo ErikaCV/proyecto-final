@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
+import '../styles/Login.css'
 
 const LoginForm = () => {
   const { handleSubmit, control } = useForm();
@@ -9,6 +10,11 @@ const LoginForm = () => {
   };
 
   return (
+    <div className="container "> 
+    <div className="row">
+    <div className="col-md-6 right-column">
+        </div>
+        <div className="col-md-6 left-column">
     <form onSubmit={handleSubmit(onSubmit)} className="needs-validation">
       <div className="mb-4">
         <label htmlFor="email" className="form-label">
@@ -76,7 +82,7 @@ const LoginForm = () => {
         </label>
       </div>
       <div className="d-grid">
-        <button type="submit" className="btn btn-secondary">
+        <button type="submit" className="btn btn-primary">
           Iniciar sesión
         </button>
       </div>
@@ -86,6 +92,9 @@ const LoginForm = () => {
         </p>
       </div>
     </form>
+    </div>
+    </div>
+    </div>
   );
 };
 
