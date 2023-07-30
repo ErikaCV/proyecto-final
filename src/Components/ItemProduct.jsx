@@ -24,6 +24,7 @@ export const ItemProduct = ({ product: { id, title, description, image, price } 
             </div>
             <div className="product-card-price">${price}</div>
           </div>
+          <hr />
           <Button className="product-card-button" onClick={handleAddToCart}>
             Agregar al Carrito
           </Button>

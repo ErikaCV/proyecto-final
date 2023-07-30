@@ -4,7 +4,9 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
 export const SearchBar = () => {
-  const products = useContext(ProductContext);
+  const getProductContextValue = useContext(ProductContext);
+
+  const { products,} = getProductContextValue();
   const [search, setSearch] = useState('');
   const [resultSearch, setResultSearch] = useState([]);
 
@@ -55,3 +57,4 @@ export const SearchBar = () => {
     </>
   );
 };
+
