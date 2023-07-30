@@ -32,7 +32,7 @@ export const UsersAbout = () => {
               <div className="d-flex justify-content-center">
                 <img className="w-75 rounded-circle" src={`http://localhost:5000/images/${data.profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
               </div>
-              <h2 className="mt-2">{data.name}</h2>
+              <h3 className="mt-2">{data.name}</h3>
               <p>{data.description}</p>
             </div>
           </div>
