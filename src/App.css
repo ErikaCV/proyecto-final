@@ -123,6 +123,24 @@
   }
 }
 
+.institution-container {
+  background-image: url(./assets/images/about-page.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .institution-container {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .institution-container {
+    height: 70vh;
+  }
+}
+
 /**Shop**/
 .product-card {
   width: 18rem;

@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import AOS from 'aos'
 
 export const UsersAbout = () => {
 
@@ -16,14 +17,18 @@ export const UsersAbout = () => {
       .catch((error) => console.error("Error al obtener los datos:", error))
     }, [])
 
+    useEffect(() => {
+      AOS.init()
+    }, [])
+
   return (
     <div className="d-flex flex-column align-items-center flex-lg-row justify-content-lg-around flex-lg-wrap">
       {aboutData.map((data) => (
-      <div className= "mb-2 pt-4 m-4" key={data._id}>
-          <div className="card-container mb-1">
+      <div className= "mb-2 pt-4 m-4" key={data._id} >
+          <div className="card-container mb-1" data-aos="flip-right" data-aos-duration="1500" >
             <div className="circle"></div>
             <div className="circle"></div>
-            <div className="card-inner p-3"> 
+            <div className="card-inner p-3" > 
               <div className="d-flex justify-content-center">
                 <img className="w-75 rounded-circle" src={`http://localhost:5000/images/${data.profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
               </div>
