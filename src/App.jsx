@@ -1,8 +1,8 @@
 
 import './App.css'
-import NavPages from './components/TabPages'
+import NavPages from './Components/TabPages'
 import { ProductProvider } from './Components/ProductContext'
-import NavBar from './components/Navbar'
+import NavBar from './Components/Navbar'
 import { CartProvider } from './Components/CartContext'
 import Footer from './Components/Footer'
 
