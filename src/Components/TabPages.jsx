@@ -11,6 +11,7 @@ import ProductManagement from "./ProductManagement";
 import LoginForm from './LoginForm';
 
 
+
 function NavPages() {
   const [activeTab, setActiveTab] = useState('home');
 
@@ -40,10 +41,8 @@ function NavPages() {
       <Route path="/category/:category" element={<ShopPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
-
       <Route path="/manageProducts" element={<ProductManagement/>} />
-
-      <Route path="/login" element={<LoginForm />} />
+     <Route path="/login" element={<LoginForm />} />
 
       </Routes>
    </>
