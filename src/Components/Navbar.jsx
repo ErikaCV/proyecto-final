@@ -19,7 +19,7 @@ function NavBar(Products) {
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       
       <Container fluid>
-      <Nav.Link href="#action1"><Image src={Logo} width={80} className="" /></Nav.Link>
+      <Link to="/"><Image src={Logo} width={80} className="" /></Link>
       
    
         <Form className="d-flex bg-light border border-withe rounded-pill">
@@ -50,7 +50,7 @@ function NavBar(Products) {
             navbarScroll
           >
             <IconCart  />
-           <Button variant="danger" className='mt-2   rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}
+          <Link to='/login'> <Button variant="danger" className='mt-2   rounded-pill me-1 text-light' style={{height:40}}>Iniciar Seción</Button>{' '}</Link>
             
             <Nav.Link href="#" disabled className='bg-light border rounded-circle'>
               <FcManager className='fs-1' /> 
