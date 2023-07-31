@@ -7,7 +7,9 @@ import { ShopPage } from "../Components/ShopPage";
 import AboutPage from './AboutPage';
 import { ContactPage } from './ContactPage';
 import { ProductDetailContainer } from "../Components/ProductDetailContainer";
+import ProductManagement from "./ProductManagement";
 import LoginForm from './LoginForm';
+
 
 function NavPages() {
   const [activeTab, setActiveTab] = useState('home');
@@ -15,6 +17,7 @@ function NavPages() {
   const handleTabSelect = (tab) => {
     setActiveTab(tab);
   };
+
 
   return (
   <>
@@ -28,6 +31,7 @@ function NavPages() {
         <Tab eventKey="shop" title={<Link to="/shop">Shop</Link>} />
         <Tab eventKey="about" title={<Link to="/about">About</Link>} />
         <Tab eventKey="contact" title={<Link to="/contact">Contact</Link>} />
+        <Tab eventKey="managet" title={<Link to="/manageProducts">Manage</Link>} />
       </Tabs>
     <Routes>
       <Route path="/" exact element={<HomePage />} />
@@ -36,7 +40,11 @@ function NavPages() {
       <Route path="/category/:category" element={<ShopPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
+
+      <Route path="/manageProducts" element={<ProductManagement/>} />
+
       <Route path="/login" element={<LoginForm />} />
+
       </Routes>
    </>
   );

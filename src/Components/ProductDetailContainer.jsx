@@ -6,16 +6,18 @@ import { ProductContext } from "./ProductContext";
 export const ProductDetailContainer = () => {
   const { id } = useParams();
   const location = useLocation();
-  const products = useContext(ProductContext);
+  const getProductContextValue = useContext(ProductContext);
+
+  const { products,} = getProductContextValue();
 
   console.log("container", products)
 
-  // Función para filtrar el producto por ID
+ 
   const filterProductById = (productId) => {
     return products.find((product) => product.id === parseInt(productId));
   };
 
-  // Intenta obtener el producto desde location.state o por ID
+ 
   const product =
     location.state?.product || (id ? filterProductById(id) : null);
 

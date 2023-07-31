@@ -6,9 +6,8 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  console.log("contextProducts", products)
 
-  
   const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
 
   useEffect(() => {
@@ -26,10 +25,33 @@ export const ProductProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
-  
-  
+  const deleteProduct = (productId) => {
+    const updatedProducts = products.filter((product) => product.id !== productId);
+    setProducts(updatedProducts);
+  };
+
+  const editProduct = (productId, updatedProduct) => {
+    const updatedProducts = products.map((product) =>
+      product.id === productId ? { ...product, ...updatedProduct } : product
+    );
+    setProducts(updatedProducts);
+  };
+
+  const addProduct = (newProduct) => {
+    console.log("agregando producto", newProduct)
+    setProducts([...products, newProduct]);
+    console.log("productos actualizados", products)
+  };
+  const getProductContextValue = () => ({
+    products,
+    deleteProduct,
+    editProduct,
+    addProduct
+  });
 
   return (
-    <ProductContext.Provider value={products}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={getProductContextValue}>
+      {children}
+    </ProductContext.Provider>
   );
 };
