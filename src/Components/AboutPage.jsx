@@ -1,5 +1,5 @@
 import { UsersAbout } from "./UsersAbout.jsx";
-
+import Testimony from "./Testimony.jsx";
 
 function AboutPage() {
 
@@ -14,6 +14,8 @@ function AboutPage() {
         <p className="fw-medium container">Durante el curso, hemos adquirido una base en desarrollo web. A lo largo de los meses, estudiamos diferentes tecnologías: HTML5, CSS3, Bootstrap, JavaScript, ReactJS, Express, NodeJS y MongoDB. Además metodologías ágiles como SCRUM, controlar versiones de código a través de Git y GitHub y gestional tareas con Trello.</p>
         <p></p>
       </div>
+      <h2 className="fw-bolder">Testimonios</h2>
+      <Testimony/>
     </div>
   );
 }

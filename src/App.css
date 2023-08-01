@@ -92,8 +92,8 @@
 }
 
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background: radial-gradient(#fa705a, #f31109);
   border-radius: 50%;
   position: absolute;
@@ -101,13 +101,13 @@
 }
 
 .circle:nth-child(1) {
-  top: -25px;
-  left: -25px;
+  top: -20px;
+  left: 0px;
 }
 
 .circle:nth-child(2) {
-  bottom: -25px;
-  right: -25px;
+  bottom: -15px;
+  right: 0px;
   animation-name: move-down1;
 }
 
@@ -127,6 +127,12 @@
   background-image: url(./assets/images/about-page.svg);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.testimony-container .card {
+  transition: all .3s;
+  border: 0.1rem solid #fce4e4;
+  box-shadow: 1px 4px 9px #9b9b9b;
 }
 
 @media screen and (min-width: 768px) {

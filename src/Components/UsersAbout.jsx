@@ -11,7 +11,7 @@ export const UsersAbout = () => {
       axios.get("http://localhost:5000/about-us")
       
       .then((response) => {
-        console.log("Datos recibidos del backend:", response.data);
+        // console.log("Datos recibidos del backend:", response.data);
         setAboutData(response.data);
       })
       .catch((error) => console.error("Error al obtener los datos:", error))
