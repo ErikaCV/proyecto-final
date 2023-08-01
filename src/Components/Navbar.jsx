@@ -23,20 +23,7 @@ function NavBar(Products) {
       
    
         <Form className="d-flex bg-light border border-withe rounded-pill">
-        <NavDropdown title="Categories" id="navbarScrollingDropdown" className='ps-2 pt-2'>
-                             <Link to="/category/Women's Clothing">
-                                <Nav>Women&apos;s Clothing</Nav>
-                            </Link>
-                            <Link to="/category/Men's Clothing">
-                                <Nav>Men&apos;s Clothing</Nav>
-                            </Link>
-                            <Link to="/category/Jewelery">
-                                <Nav>Jewelery</Nav>
-                            </Link>
-                            <Link to="/category/Electronics">
-                                <Nav>Electronics</Nav>
-                            </Link>
-            </NavDropdown>
+
             <SearchBar/>
             <FaSistrix className=' fs-1 pe-3 ' />
            

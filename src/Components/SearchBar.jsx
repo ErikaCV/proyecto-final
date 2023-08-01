@@ -34,8 +34,8 @@ export const SearchBar = () => {
         value={search}
         onChange={handleSearch}
         type="search"
-        placeholder=""
-        className="border-0 bg-light"
+        placeholder="Buscar"
+        className="border-0 bg-light rounded-pill"
         aria-label="Search"
       />
       {shouldShowResults && (
