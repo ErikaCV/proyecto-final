@@ -9,7 +9,7 @@ function AboutPage() {
 
   return (
     <>
-      <div className="container">
+      <div className="container pt-2">
         <h1 className="text-center about-title">Acerca de nosotros</h1>
         <hr />
 
