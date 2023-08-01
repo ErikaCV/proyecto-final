@@ -1,6 +1,4 @@
 #root {
-  
- 
   text-align: center;
 }
 
@@ -13,6 +11,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,42 +38,87 @@
 .read-the-docs {
   color: #888;
 }
+
 .btnPrime{
   background-color: #b91817;
 }
 
-/**NavBar**/
+/**NAVBAR**/
+
+.navbar-container {
+  background-color: #0f0f0f;
+}
+
+.icon-search {
+  width: 20%;
+}
+
+.btn-login button {
+  border: .1rem solid #c40c2e;
+  background-color: #c40c2e;
+}
+
+.btn-login button:hover  {
+ cursor: pointer;
+ background-color: #e6143b;
+}
+
 .boxSearch{
   margin-top: 40px;
-    position: absolute;
-    width: 350px;
-    z-index: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    max-height: 150px;
-    overflow-y: auto;
-  }
-  .iconCart{
-    background-color: #b91817;
-  
-  }
-  .resumenCarrito {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 350px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container-search {
+    margin: 0 auto;
+    width: 75%;
   }
 
-  /**
-    .tabPages{
-    background-color: #e63e11;
+  .icon-search {
+    width: 7%;
+    padding-bottom: .4rem;
   }
-**/
+
+  .boxSearch{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-search {
+    width: 45%;
+  }
+
+  .icon-search {
+    width: 8%;
+    padding-bottom: .4rem;
+  }
+
+  .boxSearch{
+    width: 30%;
+  }
+}
+.iconCart{
+  background-color: #c40c2e;
+}
+
+.resumenCarrito {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 
 /**About*/
@@ -319,7 +363,15 @@
 }
 
 
-/**Carrito*/
+/**CART*/
+
+.number-cart-container span{
+  font-size: .8rem;
+}
+
+.open-cart-icon {
+  font-size: 2.5rem;
+}
 
 .iconCart {
   position: relative;
@@ -372,9 +424,8 @@
 }
 
 .productoCarrito img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 2.8rem;
+  margin: 0rem .3rem;
 }
 
 .productoCarrito p {
