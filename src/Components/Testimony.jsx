@@ -25,7 +25,7 @@ function Testimony() {
     <div className=" p-3 container d-flex flex-column align-items-center flex-md-row justify-content-md-around flex-md-wrap">
       {testimonyData.map((data) => (
         <div key={data._id} className="testimony-container" data-aos="fade-up" data-aos-duration="1200">
-          <Card className="mb-4 card" style={{ width: '18rem' }}>
+          <Card className="mb-4 card pt-2 px-0" style={{ width: '18rem' }}>
             <div className="d-flex justify-content-center">
               <Card.Img variant="top" className="w-75 rounded-circle" src={`http://localhost:5000/images/${data. profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
             </div>
