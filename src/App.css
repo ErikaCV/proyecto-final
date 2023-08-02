@@ -131,10 +131,9 @@
 
 .testimony-container .card {
   transition: all .3s;
-  background-color: #d10e21;
-  border: .1rem solid #d10e21;
-  color: white;
-  box-shadow: 1px 9px 25px -7px rgb(8, 8, 8);
+  background-color: #f7f7f7;
+  border: .1rem solid #bd0202;
+  box-shadow: 5px 8px 18px -5px rgb(24, 24, 24);
 }
 
 @media screen and (min-width: 768px) {

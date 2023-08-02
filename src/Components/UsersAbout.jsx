@@ -22,7 +22,7 @@ export const UsersAbout = () => {
     }, [])
 
   return (
-    <div className="d-flex flex-column align-items-center flex-lg-row justify-content-lg-around flex-lg-wrap">
+    <div className="d-flex flex-column align-items-center flex-md-row justify-content-md-around flex-md-wrap">
       {aboutData.map((data) => (
       <div className= "mb-2 pt-4 m-4" key={data._id} >
           <div className="card-container mb-1" data-aos="flip-right" data-aos-duration="1500" >
