@@ -16,53 +16,28 @@ const ContactForm = () => {
       email: '',
       message: '',
     },
-  });
+  })
 
   const [formMessage, setFormMessage] = useState('')
   const [formError, setFormError] = useState('')
 
   const onSubmit = async (data) => {
+   
     try {
-
-      // if (data.name.length <= 2 || data.name.length >= 20) {
-      //   setFormError('El nombre debe tener entre 2 y 20 caracteres.');
-      //   setFormMessage('');
-      //   return;
-      // }
-
-      // if (data.lastname.length <= 2 || data.lastname.length >= 20) {
-      //   setFormError('El apellido debe tener entre 2 y 20 caracteres.');
-      //   setFormMessage('');
-      //   return;
-      // }
-
-      // const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-      // if (!emailRegex.test(data.email)) {
-      //   setFormError('Ingresa una dirección de correo válida.');
-      //   setFormMessage('');
-      //   return;
-      // }
-
-      // if (data.message.length > 250) {
-      //   setFormError('El mensaje no puede exceder los 250 caracteres.');
-      //   setFormMessage('');
-      //   return;
-      // }
-
-      await axios.post('http://localhost:5000/contact', data);
-      setFormError('');
-      setFormMessage('Datos enviados');
+      await axios.post('http://localhost:5000/contact', data)
+      setFormError('')
+      setFormMessage('Datos enviados')
       reset()
 
       setTimeout(() => {
-        setFormMessage('');
-      }, 2000);
+        setFormMessage('')
+      }, 2000)
 
     } catch (error) {
-      setFormError('Ha ocurrido un error al enviar los datos.');
-      setFormMessage('');
+      setFormError('Ha ocurrido un error al enviar los datos.')
+      setFormMessage('')
     }
-  };
+  }
 
   return (
     <div className="cf-container">
