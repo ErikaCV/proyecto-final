@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Button, Table, Image, Form, Modal} from 'react-bootstrap';
 import { ProductContext } from './ProductContext';
 import { CiEdit, CiSquareRemove } from "react-icons/ci";
+import Swal from 'sweetalert2';
+
 
 export const TableProductManaget = () => {
     const getProductContextValue = useContext(ProductContext);
@@ -45,11 +47,42 @@ export const TableProductManaget = () => {
   const handleSaveChanges = () => {
     editProduct(editedProduct.id, editedProduct);
     setShowModal(false);
+  
+   
+    Swal.fire({
+      icon: 'success',
+      title: '¡Cambios guardados!',
+      text: 'Los cambios han sido guardados correctamente.',
+      timer: 2000, 
+      showConfirmButton: false, 
+    });
   };
 
   const handleDeleteProduct = (productId) => {
+    
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Una vez eliminado, no podrás recuperar el producto',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+
     deleteProduct(productId);
+       
+        Swal.fire(
+          '¡Eliminado!',
+          'El producto ha sido eliminado correctamente',
+          'success'
+        );
+      }
+    });
   };
+
 
   return (
     <div className='container-fluid shadow-lg rounded'>
