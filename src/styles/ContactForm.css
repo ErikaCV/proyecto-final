@@ -26,6 +26,21 @@
   .cf-form {
     width: 40%;
   }
+
+  .text-container {
+    width: 50%;
+    padding: 0rem 1rem;
+  }
+
+  .iframe-container {
+    width: 50%;
+    padding: 0rem 1rem;
+    
+  }
+
+  .iframe-container iframe {
+   height: 50vh;
+  }
 }
   
 .cf-form input,
