@@ -57,7 +57,7 @@ export const TableProductManaget = () => {
       showConfirmButton: false, 
     });
   };
-  
+
   const handleDeleteProduct = (productId) => {
     
     Swal.fire({
@@ -72,7 +72,7 @@ export const TableProductManaget = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        deleteProduct(productId);
+    deleteProduct(productId);
        
         Swal.fire(
           '¡Eliminado!',
@@ -82,7 +82,7 @@ export const TableProductManaget = () => {
       }
     });
   };
-  
+
 
   return (
     <div className='container-fluid shadow-lg rounded'>
