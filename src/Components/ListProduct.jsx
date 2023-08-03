@@ -6,7 +6,7 @@ console.log("lista de productos", props)
 
     return(
         <>
-        <h1>Tienda</h1>
+        <h1 className="about-title">Tienda</h1>
         <div className="d-flex justify-content-center row">
         {products.map((product, index) => {
                 
