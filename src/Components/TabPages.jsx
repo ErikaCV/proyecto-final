@@ -29,7 +29,7 @@ function NavPages() {
       <div className='row'>
         <div className='col-md-2 tabPages pe-0'>
           <Dropdown >
-            <Dropdown.Toggle variant="danger" id="dropdown-basic" className="pe-0 w-100">
+            <Dropdown.Toggle variant="danger" id="dropdown-basic" className="pe-0 w-100 ">
               Categorías
             </Dropdown.Toggle>
 
