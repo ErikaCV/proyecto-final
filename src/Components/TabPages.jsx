@@ -49,11 +49,11 @@ function NavPages() {
             id="uncontrolled-tab-example"
             className="bg-warning"
           >
-            <Tab eventKey="home" title={<Link to="/">Home</Link>} />
-            <Tab eventKey="shop" title={<Link to="/shop">Shop</Link>} />
-            <Tab eventKey="about" title={<Link to="/about">About</Link>} />
-            <Tab eventKey="contact" title={<Link to="/contact">Contact</Link>} />
-            <Tab eventKey="managet" title={<Link to="/manageProducts">Manage</Link>} />
+            <Tab eventKey="home" title={<Link className='link-underline link-underline-opacity-0' to="/">Inicio</Link>} />
+            <Tab eventKey="shop" title={<Link className='link-underline link-underline-opacity-0' to="/shop">Tienda</Link>} />
+            <Tab eventKey="about" title={<Link className='link-underline link-underline-opacity-0'to="/about">Nosotros</Link>} />
+            <Tab eventKey="contact" title={<Link className='link-underline link-underline-opacity-0'to="/contact">Contacto</Link>} />
+            <Tab eventKey="managet" title={<Link className='link-underline link-underline-opacity-0'to="/manageProducts">Administrar</Link>} />
           </Tabs>
         </div>
       </div>
