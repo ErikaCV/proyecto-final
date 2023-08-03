@@ -26,11 +26,19 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   const deleteProduct = (productId) => {
+    // const deleteProductInDatabase = (idProduct) => {}
+    //fetch("http://localhost:4002/delete-product/idProduct", {
+//  method: "DELETE"
+// })
+// }
     const updatedProducts = products.filter((product) => product.id !== productId);
     setProducts(updatedProducts);
   };
 
   const editProduct = (productId, updatedProduct) => {
+    // fetch("http://localhost:4002/edit-product/6c45879s54d874", {
+ // method: "PUT"
+// })
     const updatedProducts = products.map((product) =>
       product.id === productId ? { ...product, ...updatedProduct } : product
     );
@@ -38,6 +46,9 @@ export const ProductProvider = ({ children }) => {
   };
 
   const addProduct = (newProduct) => {
+    // fetch.post{}
+    // fetch("http://localhost:4002/api/create-product
+
     console.log("agregando producto", newProduct)
     setProducts([...products, newProduct]);
     console.log("productos actualizados", products)
