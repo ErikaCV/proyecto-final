@@ -127,129 +127,80 @@
 
 
 
-/**About*/
-.about-title {
-  color: #333;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.img-main {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/**ABOUT-US*/
+
+.card-container {
+  width: 300px;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
 }
 
-
-.text-about{
-  margin-top: 25px;
-    padding: 76px 38px 0px 74px;
-    border: 2px solid #e5e5e5;
-    border-radius: 10px;
-    margin-left: -65px;
-    position: relative;
-    z-index: -1;
-    margin-right: 6px;
-    height: 350px;
+.card-inner {
+  width: inherit;
+  height: inherit;
+  background: rgba(34, 34, 34, 0.027);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 0.1rem solid #f3110944;
 }
 
-.text-about h3{
-  font-size: 20px;
-    font-weight: 500;
-    color: #2d2d2d;
-}
-
-.text-about p{
-  color: #919191;;
-}
-
-.text-about span{
-  font-weight: bold;
-    color: #484848;
-}
-
-.box-about{
-
-  height: 600px;
-}
-
-
-.cardAbout h3{ 
-     font-size: 20px;
-    font-weight: 500;
-    color: #2d2d2d;
-    font-family: inherit;
-    font-size: 100%;
-
- 
-  }
-  .cardAbout p{
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #919191;;
-  }
-  
-  .user-card {
-    background-color: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .user-card:hover {
-    box-shadow: 0px 4px 8px rgba(255, 102, 0, 0.692);
-  }
-  
-  .user-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  .user-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: over;
-    border-radius: 10px;
-  }
-  
-  .user-card .card-body {
-    padding: 16px;
-  }
-  
-  .user-card .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .user-card .card-text {
-    font-size: 14px;
-    color: #666666;
-  }
-  
-
-  .carousel .carousel-inner {
-  overflow: visible !important;
-}
-
-.carousel-user-image {
-  width: 80px; 
-  height: 80px;
+.circle {
+  width: 75px;
+  height: 75px;
+  background: radial-gradient(#fa705a, #f31109);
   border-radius: 50%;
   position: absolute;
-  top: -40px; 
-  left: 50%;
-  transform: translateX(-50%); 
-  z-index: 2; 
-  margin: 0 auto; 
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+  top: -20px;
+  left: 0px;
+}
+
+.circle:nth-child(2) {
+  bottom: -15px;
+  right: 0px;
+  animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes move-down1 {
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.institution-container {
+  background-image: url(./assets/images/about-page.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.testimony-container .card {
+  transition: all .3s;
+  background-color: #f7f7f7;
+  border: .1rem solid #bd0202;
+  box-shadow: 5px 8px 18px -5px rgb(24, 24, 24);
+}
+
+@media screen and (min-width: 768px) {
+  .institution-container {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .institution-container {
+    height: 70vh;
+  }
 }
 
 /**Shop**/
@@ -317,6 +268,7 @@
   color: #b91817;
   width: 100%;
 }
+
 
 
 /**ProductDetail**/
@@ -465,4 +417,42 @@
 }
 .IconManage:hover{
   transform: scale(1.2);
+}
+
+/*FOOTER*/
+
+
+.footer-container {
+  background-color: #0f0f0f;
+}
+
+.footer-container p {
+  margin-bottom: 0rem;
+}
+
+.linksProfile-container img {
+  width: 1.8rem;
+}
+
+.logo-app {
+  width: 100%;
+
+}
+
+
+@media screen and (min-width: 320px)  {
+  .logo-container {
+    width: 20%;
+    
+    }
+
+}
+
+
+@media screen and (min-width: 1024px)  {
+  .logo-container {
+    width: 10%;
+    
+    }
+
 }
