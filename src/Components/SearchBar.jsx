@@ -4,7 +4,9 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
 export const SearchBar = () => {
-  const products = useContext(ProductContext);
+  const getProductContextValue = useContext(ProductContext);
+
+  const { products,} = getProductContextValue();
   const [search, setSearch] = useState('');
   const [resultSearch, setResultSearch] = useState([]);
 
@@ -32,8 +34,8 @@ export const SearchBar = () => {
         value={search}
         onChange={handleSearch}
         type="search"
-        placeholder=""
-        className="border-0 bg-light"
+        placeholder="Buscar productos, ofertas y más..."
+        className="border-0 bg-light rounded-pill shadow-none"
         aria-label="Search"
       />
       {shouldShowResults && (
@@ -41,17 +43,18 @@ export const SearchBar = () => {
           {resultSearch.length > 0 ? (
             resultSearch.map((product) => (
               <p key={product.id}>
-                <Link to={`/products/${product.id}`} onClick={handleCloseResults}>
+                <Link className='text-black fw-medium link-underline link-underline-opacity-0 p-2 ' to={`/products/${product.id}`} onClick={handleCloseResults}>
                   {product.title}
                 </Link>
                 <hr />
               </p>
             ))
           ) : (
-            <p>No existe</p>
+            <p className='pt-4 fw-bolder'>No existe</p>
           )}
         </div>
       )}
     </>
   );
 };
+

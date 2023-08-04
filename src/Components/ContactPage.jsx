@@ -1,5 +1,7 @@
+import ContactForm from "./ContactForm"
+
 export const ContactPage = () =>{
     return(
-        <h1>Contactanos</h1>
+   <ContactForm />
     )
 }

@@ -9,8 +9,8 @@ import '../styles/Slider.css';
 
 function Slider() { 
   return (
-    <div className='slider mt-4'>
-      <Carousel>
+    <div className='slider mt-2'>
+      <Carousel className='container-fluid rounded'>
         <Carousel.Item interval={3000}>
           <img
             className="carousel-image"
