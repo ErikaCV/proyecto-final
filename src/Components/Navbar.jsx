@@ -22,6 +22,7 @@ function NavBar(Products) {
               <Nav className="me-auto">
                 <IconCart />
                 <Link to='/login' className='btn-login'><button className='m-3 btn text-white'>Iniciar sesión</button></Link>
+                <Link to='/register' className='btn-login'><button className='m-3 btn text-white'>Registrarme</button></Link>
               </Nav>
             </div>
           </Navbar.Collapse>
