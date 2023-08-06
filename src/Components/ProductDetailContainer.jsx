@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { ProductDetail } from "./ProductDetail";
 import { ProductContext } from "./ProductContext";
+import BreadcrumbPages from "./Breadcrumb";
 
 export const ProductDetailContainer = () => {
   const { id } = useParams();
@@ -23,8 +24,9 @@ export const ProductDetailContainer = () => {
 
   return (
     <div className="container">
-      <h1>DETALLES DEL PRODUCTO</h1>
-      <hr />
+      <BreadcrumbPages/>
+      <h3 className="text-start fw-light">DETALLES DEL PRODUCTO</h3>
+    
       {product ? (
         <ProductDetail product={product} />
       ) : (

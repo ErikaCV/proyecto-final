@@ -1,10 +1,15 @@
 import { UsersAbout } from "./UsersAbout.jsx";
 import Testimony from "./Testimony.jsx";
+import BreadcrumbPages from "./Breadcrumb.jsx";
 
 function AboutPage() {
 
   return (
+    <>
+    
+    <BreadcrumbPages/>
     <div className="py-4">
+    
       <h1 className="text-center fw-bolder" >Nuestro Equipo</h1>
       <p className="container fw-medium fs-5"> Somos un grupo de entusiastas estudiantes de desarrollo web, compartimos el objetivo común de crecer como desarrolladores.</p>
       <UsersAbout />
@@ -17,6 +22,7 @@ function AboutPage() {
       <h2 className="fw-bolder">Testimonios</h2>
       <Testimony/>
     </div>
+    </>
   );
 }
 
