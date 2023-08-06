@@ -12,7 +12,7 @@ function RegisterForm() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('http://localhost:5000/register', data)
+      await axios.post('http://localhost:5000/api/register', data)
       setFormError('')
       setFormMessage('Registro existoso')
       reset()
@@ -144,4 +144,4 @@ function RegisterForm() {
   )
 }
 
-export default RegisterForm;
+export default RegisterForm

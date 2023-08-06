@@ -8,7 +8,7 @@ export const UsersAbout = () => {
   const [aboutData, setAboutData] = useState([])
 
     useEffect(() => {
-      axios.get("http://localhost:5000/about-us")
+      axios.get("http://localhost:5000/api/about-us")
       
       .then((response) => {
         // console.log("Datos recibidos del backend:", response.data);
