@@ -66,6 +66,8 @@ function NavPages() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/manageProducts" element={<ProductManagement />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/registration" element={<LoginForm />} />
+
       </Routes>
     </>
   );
