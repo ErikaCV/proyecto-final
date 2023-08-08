@@ -9,6 +9,7 @@ import { ProductDetailContainer } from "../Components/ProductDetailContainer";
 import ProductManagement from "./ProductManagement";
 import LoginForm from './LoginForm';
 import { ProductContext } from './ProductContext';
+import RegisterForm from './RegisterForm';
 
 
 function NavPages() {
@@ -66,8 +67,7 @@ function NavPages() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/manageProducts" element={<ProductManagement />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/registration" element={<LoginForm />} />
-
+        <Route path="/register" element={<RegisterForm />} />
       </Routes>
     </>
   );
