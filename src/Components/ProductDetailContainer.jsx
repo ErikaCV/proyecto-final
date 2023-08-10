@@ -15,13 +15,16 @@ export const ProductDetailContainer = () => {
 
  
   const filterProductById = (productId) => {
-    return products.find((product) => product.id === parseInt(productId));
+    console.log("id detalles", productId)
+    return products.find((product) => product.id === productId);
+    console.log("producto filtrado", product)
   };
 
  
   const product =
     location.state?.product || (id ? filterProductById(id) : null);
-
+    
+  
   return (
     <div className="container">
       <BreadcrumbPages/>

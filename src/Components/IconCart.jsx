@@ -38,6 +38,7 @@ export const IconCart = () => {
           <hr />
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
+              
               <div key={item.id} className="productoCarrito d-flex mb-3">
                 <img src={item.image} alt={item.title} className="productoCarrito-img" />
                 <div className="productoCarrito-info p-2">

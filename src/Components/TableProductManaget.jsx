@@ -1,17 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Button, Table, Image, Form, Modal} from 'react-bootstrap';
+import { Button, Table, Image, Form, Modal } from 'react-bootstrap';
 import { ProductContext } from './ProductContext';
-import { CiEdit, CiSquareRemove } from "react-icons/ci";
+import { FiEdit, FiTrash2 } from 'react-icons/fi';
 import Swal from 'sweetalert2';
 
-
 export const TableProductManaget = () => {
-    const getProductContextValue = useContext(ProductContext);
+  const getProductContextValue = useContext(ProductContext);
+  const { products, deleteProduct, editProduct } = getProductContextValue();
 
-    const { products, deleteProduct, editProduct} = getProductContextValue();
   const [showModal, setShowModal] = useState(false);
   const [editedProduct, setEditedProduct] = useState({
-    id: '',
+    _id: '',
     title: '',
     description: '',
     price: 0,
@@ -21,14 +20,7 @@ export const TableProductManaget = () => {
 
   const handleEditProduct = (productId) => {
     const productToEdit = products.find((product) => product.id === productId);
-    setEditedProduct({
-      id: productToEdit.id,
-      title: productToEdit.title,
-      description: productToEdit.description,
-      price: productToEdit.price,
-      image: productToEdit.image,
-      category: productToEdit.category,
-    });
+    setEditedProduct({ ...productToEdit });
     setShowModal(true);
   };
 
@@ -47,19 +39,17 @@ export const TableProductManaget = () => {
   const handleSaveChanges = () => {
     editProduct(editedProduct.id, editedProduct);
     setShowModal(false);
-  
-   
+
     Swal.fire({
       icon: 'success',
       title: '¡Cambios guardados!',
       text: 'Los cambios han sido guardados correctamente.',
-      timer: 2000, 
-      showConfirmButton: false, 
+      timer: 2000,
+      showConfirmButton: false,
     });
   };
 
   const handleDeleteProduct = (productId) => {
-    
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Una vez eliminado, no podrás recuperar el producto',
@@ -71,24 +61,18 @@ export const TableProductManaget = () => {
       cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
+        deleteProduct(productId);
 
-    deleteProduct(productId);
-       
-        Swal.fire(
-          '¡Eliminado!',
-          'El producto ha sido eliminado correctamente',
-          'success'
-        );
+        Swal.fire('¡Eliminado!', 'El producto ha sido eliminado correctamente', 'success');
       }
     });
   };
 
-
   return (
-    <div className='container-fluid shadow-lg rounded'>
-      <h2 className=" about-title text-start mb-0 p-2">Administrar Productos</h2>
-      <Table striped bordered hover >
-        <thead >
+    <div className="container-fluid shadow-lg rounded">
+      <h2 className="about-title text-start mb-0 p-2">Administrar Productos</h2>
+      <Table striped bordered hover>
+        <thead>
           <tr>
             <th>Imagen</th>
             <th>Producto</th>
@@ -108,10 +92,10 @@ export const TableProductManaget = () => {
               <td>{product.description}</td>
               <td>${product.price}</td>
               <td>{product.category}</td>
-              <td className=''>
+              <td className="">
                 <div>
-                <CiEdit className='fs-2 text-success IconManage'  onClick={() => handleEditProduct(product.id)} />
-                <CiSquareRemove className='fs-2 text-danger IconManage' onClick={() => handleDeleteProduct(product.id)} />
+                  <FiEdit className="fs-2 text-success IconManage" onClick={() => handleEditProduct(product.id)} />
+                  <FiTrash2 className="fs-2 text-danger IconManage" onClick={() => handleDeleteProduct(product.id)} />
                 </div>
               </td>
             </tr>
@@ -127,48 +111,23 @@ export const TableProductManaget = () => {
           <Form>
             <Form.Group>
               <Form.Label>Título</Form.Label>
-              <Form.Control
-                type="text"
-                name="title"
-                value={editedProduct.title}
-                onChange={handleInputChange}
-              />
+              <Form.Control type="text" name="title" value={editedProduct.title} onChange={handleInputChange} />
             </Form.Group>
             <Form.Group>
               <Form.Label>Descripción</Form.Label>
-              <Form.Control
-                type="text"
-                name="description"
-                value={editedProduct.description}
-                onChange={handleInputChange}
-              />
+              <Form.Control type="text" name="description" value={editedProduct.description} onChange={handleInputChange} />
             </Form.Group>
             <Form.Group>
               <Form.Label>Precio</Form.Label>
-              <Form.Control
-                type="number"
-                name="price"
-                value={editedProduct.price}
-                onChange={handleInputChange}
-              />
+              <Form.Control type="number" name="price" value={editedProduct.price} onChange={handleInputChange} />
             </Form.Group>
             <Form.Group>
               <Form.Label>Categoría</Form.Label>
-              <Form.Control
-                type="text"
-                name="category"
-                value={editedProduct.category}
-                onChange={handleInputChange}
-              />
+              <Form.Control type="text" name="category" value={editedProduct.category} onChange={handleInputChange} />
             </Form.Group>
             <Form.Group>
               <Form.Label>URL de la imagen</Form.Label>
-              <Form.Control
-                type="text"
-                name="image"
-                value={editedProduct.image}
-                onChange={handleInputChange}
-              />
+              <Form.Control type="file" name="image" value={editedProduct.image} onChange={handleInputChange} />
             </Form.Group>
           </Form>
         </Modal.Body>
