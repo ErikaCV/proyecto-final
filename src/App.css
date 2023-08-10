@@ -121,8 +121,9 @@
 }
 
 /**TabPages**/
-.tabPages{
-  background-color: #e63e11;
+.tabPages-container{
+  background-color:#DC3545;
+  color:white;
 }
 
 
