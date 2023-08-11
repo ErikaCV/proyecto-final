@@ -1,37 +1,36 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { getData } from '../Utils/Function';
-import { API_PRACTICE } from '../Utils/Constants';
+import React, { createContext, useState, useEffect } from "react";
+import { getData } from "../Utils/Function";
+import { API_PRACTICE } from "../Utils/Constants";
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  console.log("contextProducts", products)
+  console.log("contextProducts", products);
 
- // const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
-  const URL = 'http://localhost:5000/api';
+  // const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
+  const URL = "http://localhost:5000/api";
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await getData(`${URL}/products`);
         const data = response.getProducts;
-        console.log("data", data)
-        const transformedProducts = data.map(product => ({
-          id: product._id, // 
+        console.log("data", data);
+        const transformedProducts = data.map((product) => ({
+          id: product._id, //
           title: product.title,
           category: product.category,
           description: product.description,
           price: product.price,
           stock: product.stock,
-          image:product.photo,
-          
+          image: product.photo,
         }));
 
         setProducts(transformedProducts);
-        console.log("api response",data);
+        console.log("api response", data);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       }
     };
 
@@ -41,71 +40,78 @@ export const ProductProvider = ({ children }) => {
   const deleteProduct = async (productId) => {
     try {
       const res = await fetch(`${URL}/products/${productId}`, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       });
 
       if (res.ok) {
-        
-        setProducts(prevProducts => prevProducts.filter(product => product.id !== productId));
-        console.log('Producto eliminado correctamente.');
+        setProducts((prevProducts) =>
+          prevProducts.filter((product) => product.id !== productId)
+        );
+        console.log("Producto eliminado correctamente.");
       } else {
-        console.error('Error al eliminar el producto:', res.statusText);
+        console.error("Error al eliminar el producto:", res.statusText);
       }
     } catch (error) {
-      console.error('Error en la petición de eliminación:', error);
+      console.error("Error en la petición de eliminación:", error);
     }
   };
-
 
   const editProduct = async (productId, updatedProduct) => {
     try {
+      const formData = new FormData();
+      formData.append("title", updatedProduct.title);
+      formData.append("description", updatedProduct.description);
+      formData.append("price", updatedProduct.price);
+      formData.append("category", updatedProduct.category);
+      formData.append("stock", updatedProduct.stock);
+      formData.append("image", updatedProduct.image);
       const res = await fetch(`${URL}/products/edit-product/${productId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(updatedProduct)
+        method: "PUT",
+        body: formData,
       });
-  
+
       if (res.ok) {
-  
-        console.log('Producto actualizado:', updatedProduct);
+        console.log("Producto actualizado:", updatedProduct);
+
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product.id === productId ? updatedProduct : product
+          )
+        );
       } else {
-      
-        console.error('Error al actualizar el producto:', res.statusText);
+        console.error("Error al actualizar el producto:", res.statusText);
       }
     } catch (error) {
-      console.error('Error en la petición de actualización:', error);
+      console.error("Error en la petición de actualización:", error);
     }
   };
-  
-  const addProduct = async (formData) => {
 
-    console.log("GREKÑKA", formData)
+  const addProduct = async (formData) => {
+    console.log("GREKÑKA", formData);
     try {
       const res = await fetch(`${URL}/products/create-product`, {
-        method: 'POST',
-        body: formData, 
+        method: "POST",
+        body: formData,
       });
-  
+
       if (res.ok) {
-        console.log('Producto creado correctamente');
+        console.log("Producto creado correctamente");
       } else {
-        console.error('Error al crear el producto:', res.statusText);
+        console.error("Error al crear el producto:", res.statusText);
       }
     } catch (error) {
-      console.error('Error en la petición de creación:', error);
+      console.error("Error en la petición de creación:", error);
     }
   };
-  
+
   const getProductContextValue = () => ({
     products,
     deleteProduct,
     editProduct,
-    addProduct
+    addProduct,
   });
 
   return (
