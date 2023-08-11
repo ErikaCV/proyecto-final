@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { ProductContext } from './ProductContext';
-import { Button, Form } from 'react-bootstrap';
-import Swal from 'sweetalert2';
-
+import React, { useContext, useState, useEffect } from "react";
+import { ProductContext } from "./ProductContext";
+import { Button, Form } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 export const CreateProduct = () => {
   const getProductContextValue = useContext(ProductContext);
@@ -10,11 +9,12 @@ export const CreateProduct = () => {
   const { addProduct } = getProductContextValue();
 
   const [newProduct, setNewProduct] = useState({
-    title: '',
-    description: '',
+    title: "",
+    description: "",
     price: 0,
-    image: null, // Cambiado a null para almacenar el archivo
-    category: '',
+    image: null,
+    category: "",
+    stock: 0,
   });
 
   const handleInputChange = (e) => {
@@ -28,33 +28,34 @@ export const CreateProduct = () => {
   const handleImageChange = (e) => {
     setNewProduct({
       ...newProduct,
-      image: e.target.files[0], 
+      image: e.target.files[0],
     });
   };
 
   const handleAddProduct = async () => {
-    const formData = new FormData(); 
+    const formData = new FormData();
 
-    formData.append('title', newProduct.title);
-    formData.append('description', newProduct.description);
-    formData.append('price', newProduct.price);
-    formData.append('category', newProduct.category);
-    formData.append('image', newProduct.image); 
+    formData.append("title", newProduct.title);
+    formData.append("description", newProduct.description);
+    formData.append("price", newProduct.price);
+    formData.append("category", newProduct.category);
+    formData.append("image", newProduct.image);
+    formData.append('stock', newProduct.stock);
 
-    await addProduct(formData); 
+    await addProduct(formData);
 
     setNewProduct({
-      title: '',
-      description: '',
+      title: "",
+      description: "",
       price: 0,
       image: null,
-      category: '',
+      category: "",
     });
     Swal.fire({
-      icon: 'success',
-      title: 'Producto creado correctamente',
+      icon: "success",
+      title: "Producto creado correctamente",
       showConfirmButton: false,
-      timer: 1500, 
+      timer: 1500,
     });
   };
 
@@ -63,9 +64,9 @@ export const CreateProduct = () => {
   }, [newProduct]);
 
   return (
-    <div className='container-fluid'>
-      <Form className='border p-5 rounded shadow-lg row'>
-        <h2 className='about-title text-start'>Agregar Nuevo Producto</h2>
+    <div className="container-fluid">
+      <Form className="border p-5 rounded shadow-lg row">
+        <h2 className="about-title text-start">Agregar Nuevo Producto</h2>
         <Form.Group className="mb-3 col-6">
           <Form.Label>Título</Form.Label>
           <Form.Control
@@ -76,17 +77,19 @@ export const CreateProduct = () => {
             placeholder="Ingrese el título"
           />
         </Form.Group>
-        <Form.Group className="mb-3 col-4">
-          <Form.Label>Categoría</Form.Label>
+
+        <Form.Group className="mb-3 col-2">
+          <Form.Label>Stock</Form.Label>
           <Form.Control
-            type="text"
-            name="category"
-            value={newProduct.category}
+            type="number"
+            name="stock"
+            value={newProduct.stock}
             onChange={handleInputChange}
-            placeholder="Ingrese la categoría"
+            placeholder="Ingrese la cantidad de stock"
           />
-           </Form.Group>
-           <Form.Group className="mb-3 col-2">
+        </Form.Group>
+
+        <Form.Group className="mb-3 col-2">
           <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
@@ -105,18 +108,35 @@ export const CreateProduct = () => {
             onChange={handleInputChange}
             placeholder="Ingrese la descripción"
           />
-          </Form.Group>
+        </Form.Group>
+
         <Form.Group className="mb-3 col-6">
           <Form.Label>Imagen</Form.Label>
           <Form.Control
             type="file"
             name="image"
-            onChange={handleImageChange} 
+            onChange={handleImageChange}
             accept=".jpg, .jpeg, .png, .webp"
           />
         </Form.Group>
+        <Form.Group className="mb-3 col-6">
+          <Form.Label>Categoría</Form.Label>
+          <Form.Control
+            type="text"
+            name="category"
+            value={newProduct.category}
+            onChange={handleInputChange}
+            placeholder="Ingrese la categoría"
+          />
+        </Form.Group>
 
-        <Button size='sm' className='col-6 bg-success' onClick={handleAddProduct}>Agregar Producto</Button>
+        <Button
+          size="sm"
+          className="col-6 bg-success"
+          onClick={handleAddProduct}
+        >
+          Agregar Producto
+        </Button>
       </Form>
     </div>
   );
