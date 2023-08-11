@@ -13,7 +13,9 @@ function Sales() {
       <OfferCarousel/>
       </div>
       <div className="col-one rounded">
+      <h1>Aqui iria una imagen</h1>
       <OfferCarousel/>
+      
       </div>
     </div>
   );
