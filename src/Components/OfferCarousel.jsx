@@ -22,7 +22,7 @@ function OfferCarousel() {
             <img
               src={offertSlider}
               alt="Placeholder 1"
-              className="d-block w-100"
+              className="w-100"
               style={{ maxHeight: '150px' }}
             />
             <Carousel.Caption>
@@ -33,7 +33,7 @@ function OfferCarousel() {
             <img
               src={offertSlider2}
               alt="Placeholder 2"
-              className="d-block w-100"
+              className="w-100"
               style={{ maxHeight: '150px' }}
             />
             <Carousel.Caption>
@@ -44,52 +44,7 @@ function OfferCarousel() {
       </div>
     );
   }
-
-  
-  return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <Carousel fade>
-        {offerProducts.map((product) => (
-          <Carousel.Item key={product.id}>
-            <Link to={`/products/${product.id}`}>
-              <img
-                src={product.image}
-                alt={product.title}
-                className="d-block w-100"
-                style={{ maxHeight: '150px' }}
-              />
-              <Carousel.Caption>
-                <h3>{product.title}</h3>
-              </Carousel.Caption>
-            </Link>
-          </Carousel.Item>
-        ))}
-        <Carousel.Item>
-            <img
-              src={offertSlider}
-              alt="Placeholder 1"
-              className="d-block w-100"
-              style={{ maxHeight: '150px' }}
-            />
-            <Carousel.Caption>
-              
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              src={offertSlider2}
-              alt="Placeholder 2"
-              className="d-block w-100"
-              style={{ maxHeight: '150px' }}
-            />
-            <Carousel.Caption>
-             
-            </Carousel.Caption>
-          </Carousel.Item>
-      </Carousel>
-      
-    </div>
-  );
+ 
 }
 
 export default OfferCarousel;

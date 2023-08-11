@@ -27,7 +27,7 @@ function NavPages() {
 
   return (
     <>
-      <div className='row'>
+      <div className='d-flex flex-column flex-lg-row tabPages-container'>
         <div className='col-md-2 tabPages pe-0'>
           <Dropdown >
             <Dropdown.Toggle variant="danger" id="dropdown-basic" className="pe-0 w-100 ">
@@ -48,13 +48,13 @@ function NavPages() {
             activeKey={activeTab}
             onSelect={handleTabSelect}
             id="uncontrolled-tab-example"
-            className="bg-warning"
+            
           >
-            <Tab eventKey="home" title={<Link className='link-underline link-underline-opacity-0' to="/">Inicio</Link>} />
-            <Tab eventKey="shop" title={<Link className='link-underline link-underline-opacity-0' to="/shop">Tienda</Link>} />
-            <Tab eventKey="about" title={<Link className='link-underline link-underline-opacity-0'to="/about">Nosotros</Link>} />
-            <Tab eventKey="contact" title={<Link className='link-underline link-underline-opacity-0'to="/contact">Contacto</Link>} />
-            <Tab eventKey="managet" title={<Link className='link-underline link-underline-opacity-0'to="/manageProducts">Administrar</Link>} />
+            <Tab eventKey="home" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun' to="/">Inicio</Link>} />
+            <Tab eventKey="shop" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun' to="/shop">Tienda</Link>} />
+            <Tab eventKey="about" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/about">Nosotros</Link>} />
+            <Tab eventKey="contact" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/contact">Contacto</Link>} />
+            <Tab eventKey="managet" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/manageProducts">Administrar</Link>} />
           </Tabs>
         </div>
       </div>
