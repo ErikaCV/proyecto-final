@@ -66,7 +66,7 @@ export const CreateProduct = () => {
   return (
     <div className="container-fluid">
       <Form className="border p-5 rounded shadow-lg row">
-        <h2 className="about-title text-start">Agregar Nuevo Producto</h2>
+        <h2 className="fw-light text-start">Agregar Nuevo Producto</h2>
         <Form.Group className="mb-3 col-6">
           <Form.Label>Título</Form.Label>
           <Form.Control
