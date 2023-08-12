@@ -82,16 +82,16 @@ export const TableProductManaget = () => {
 
   return (
     <div className="container-fluid shadow-lg rounded">
-      <h2 className="about-title text-start mb-0 p-2">Administrar Productos</h2>
+      <h2 className="about-title text-start py-3">Administrar Productos</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>Imagen</th>
             <th>Producto</th>
-            <th>Descripción</th>
-            <th>Categoría</th>
+            <th className="d-none">Descripción</th>
+            <th className="d-none">Categoría</th>
             <th>Precio</th>
-            <th>Stock</th>
+            <th className="d-none">Stock</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -107,10 +107,10 @@ export const TableProductManaget = () => {
                 />
               </td>
               <td>{product.title}</td>
-              <td>{product.description}</td>
-              <td>{product.category}</td>
+              <td className="d-none">{product.description}</td>
+              <td className="d-none">{product.category}</td>
               <td>${product.price}</td>
-              <td>{product.stock}</td>
+              <td className="d-none">{product.stock}</td>
 
               <td className="">
                 <div>
@@ -136,7 +136,7 @@ export const TableProductManaget = () => {
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Label>Título</Form.Label>
+              <Form.Label className="fw-bolder mt-2">Título</Form.Label>
               <Form.Control
                 type="text"
                 name="title"
@@ -145,7 +145,7 @@ export const TableProductManaget = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Descripción</Form.Label>
+              <Form.Label className="fw-bolder mt-2">Descripción</Form.Label>
               <Form.Control
                 type="text"
                 name="description"
@@ -154,7 +154,7 @@ export const TableProductManaget = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Precio</Form.Label>
+              <Form.Label className="fw-bolder mt-2">Precio</Form.Label>
               <Form.Control
                 type="number"
                 name="price"
@@ -163,7 +163,7 @@ export const TableProductManaget = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Categoría</Form.Label>
+              <Form.Label className="fw-bolder mt-2">Categoría</Form.Label>
               <Form.Control
                 type="text"
                 name="category"
@@ -172,7 +172,7 @@ export const TableProductManaget = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Imagen</Form.Label>
+              <Form.Label className="fw-bolder mt-2">Imagen</Form.Label>
               <Form.Control
                 type="file"
                 name="image"

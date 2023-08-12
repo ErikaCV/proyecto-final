@@ -23,7 +23,7 @@ export const ItemProduct = ({ product: { id, title, description, image, price, s
   };
   
   return (
-    <Card className="product-card col-md-3   col-sm-4 m-3">
+    <Card className="product-card">
       <Link to={`/products/${id}`} state={{ id, image, title, description, price }}>
         <Card.Img variant="top" src={image} alt={title} className="product-card-image" />
       </Link>
@@ -31,12 +31,12 @@ export const ItemProduct = ({ product: { id, title, description, image, price, s
         <Card.Title className="product-card-title">{title}</Card.Title>
         <div className="product-card-bottom">
           <div className="product-card-rating">
-            <span className="product-card-rating-text">Precio:</span>
+            <span className="product-card-rating-text fw-medium">Precio:</span>
           </div>
           <div className="product-card-price">${price}</div>
         </div>
         <hr />
-        <Button className="product-card-button" onClick={handleAddToCart}>
+        <Button className="product-card-button btn btn-danger" onClick={handleAddToCart}>
           Agregar al Carrito
         </Button>
       </Card.Body>

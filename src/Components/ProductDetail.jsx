@@ -29,17 +29,17 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
   };
 
   return (
-    <Card key={id} className="product-detail shadow-lg">
+    <Card key={id} className="product-detail mb-5">
       <Row>
         <Col md={6} className="product-image-col">
           <Card.Img variant="top" src={image} alt={title} className="product-image" />
         </Col>
         <Col md={6}>
           <Card.Body>
-            <Card.Title className="product-title">{title}</Card.Title>
+            <Card.Title className="product-title fs-2">{title}</Card.Title>
             <Card.Text className="product-description">{description}</Card.Text>
             <div className="product-price text-start">
-              <p className="price-label">Precio</p>
+              <p className="price-label">Precio:</p>
               <h3 className="product-price-value">${price}</h3>
             </div>
             <div className="product-quantity mt-4 d-flex align-items-center">
@@ -51,13 +51,17 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
                 <FontAwesomeIcon icon={faPlus} />
               </button>
             </div>
-            <div className="product-buttons mt-4">
-              <Button className="btn btn-cart bg-warning me-2" onClick={handleAddToCart}>
-                <FontAwesomeIcon icon={faCartPlus} /> Agregar al Carrito
-              </Button>
-              <Button className="btn btn-buy bg-success">
-                <FontAwesomeIcon icon={faShoppingCart} /> Comprar
-              </Button>
+            <div className="d-lg-flex align-items-lg-center mt-3">
+              <div className="m-3">
+                <Button className="btn btn-primary" onClick={handleAddToCart}>
+                  <FontAwesomeIcon icon={faCartPlus} /> Agregar al Carrito
+                </Button>
+              </div>
+              <div>
+                <Button className="btn btn-success">
+                  <FontAwesomeIcon icon={faShoppingCart} /> Comprar
+                </Button>
+              </div>
             </div>
           </Card.Body>
         </Col>

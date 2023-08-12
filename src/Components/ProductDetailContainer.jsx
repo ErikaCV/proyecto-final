@@ -11,13 +11,13 @@ export const ProductDetailContainer = () => {
 
   const { products,} = getProductContextValue();
 
-  console.log("container", products)
+  // console.log("container", products)
 
  
   const filterProductById = (productId) => {
-    console.log("id detalles", productId)
+    // console.log("id detalles", productId)
     return products.find((product) => product.id === productId);
-    console.log("producto filtrado", product)
+    // console.log("producto filtrado", product)
   };
 
  
@@ -28,7 +28,7 @@ export const ProductDetailContainer = () => {
   return (
     <div className="container">
       <BreadcrumbPages/>
-      <h3 className="text-start fw-light">DETALLES DEL PRODUCTO</h3>
+      <h3 className="text-start fw-light my-4">DETALLES DEL PRODUCTO</h3>
     
       {product ? (
         <ProductDetail product={product} />
