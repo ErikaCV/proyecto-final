@@ -15,7 +15,7 @@ import RegisterForm from './RegisterForm';
 function NavPages() {
   const [activeTab, setActiveTab] = useState('home');
   const getProductContextValue = useContext(ProductContext);
-
+  const token = JSON.parse(localStorage.getItem('token')) || ''
   const { products } = getProductContextValue();
 
   const handleTabSelect = (tab) => {
@@ -54,7 +54,10 @@ function NavPages() {
             <Tab eventKey="shop" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun' to="/shop">Tienda</Link>} />
             <Tab eventKey="about" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/about">Nosotros</Link>} />
             <Tab eventKey="contact" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/contact">Contacto</Link>} />
-            <Tab eventKey="managet" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/manageProducts">Administrar</Link>} />
+            {
+              token &&
+              <Tab eventKey="managet" title={<Link className='link-underline link-underline-opacity-0 text-black fs-mediun'to="/manageProducts">Administrar</Link>} />
+            }
           </Tabs>
         </div>
       </div>
