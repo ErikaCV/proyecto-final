@@ -4,11 +4,17 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
+import { useUserContext } from './UserContext';
+
 
 function LoginForm() {
   const { handleSubmit, control, formState: { errors } } = useForm()
   const navigate = useNavigate()
   const [errorDate, setErrorDate] = useState()
+  const { setUserData } = useUserContext();
+
+  
 
   const [formMessage, setFormMessage] = useState('')
   const [formError, setFormError] = useState('')
@@ -18,15 +24,47 @@ function LoginForm() {
 
     try {
       const result = await axios.post("http://localhost:5000/api/login", data)
-
-      if (result.data === "Exitoso") {
+        console.log(result.data.role, result.data.name, result.data.image)
+        
+      if (result.data.msg === "Exitoso") {
+        
+        
+        
         setFormError('')
-        setFormMessage('Inicio de sesión exitoso')
+        
+        Swal.fire({
+          icon: 'success',
+          title: `¡Bienvenido, ${result.data.name}!`,
+          text: 'Has iniciado sesión correctamente.',
+          timer: 1000
+        });
+
+        if (result.data.role === "admin") {
+          localStorage.setItem("token", JSON.stringify(result.data.token));
+          
+          setTimeout(() => {
+            navigate("/manageProducts")
+          }, 1000)
+          setUserData({
+            name: result.data.name,
+            image: result.data.image,
+            role: result.data.role
+          });
+          console.log("userData")
+          return
+        }
+        setUserData({
+          name: result.data.name,
+          image: result.data.image,
+          role: result.data.role
+        });
+        
+       
         setTimeout(() => {
-          navigate("/contact")
+          navigate("/")
         }, 1000)
       } else {
-        setErrorDate('Los datos no son correctos')
+     
         setTimeout(() => {
           setErrorDate("")
         }, 2000)
@@ -99,7 +137,7 @@ function LoginForm() {
               </p>
             )}
           </div>
-          {formMessage && <p className="p-2 rounded bg-success text-white">{formMessage}</p>}
+        
           {formError && <p className="p-2 rounded bg-danger text-white">{formError}</p>}
           {errorDate && (
             <p className="text-danger">{errorDate}</p>

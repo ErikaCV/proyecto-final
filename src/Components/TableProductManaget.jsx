@@ -82,7 +82,7 @@ export const TableProductManaget = () => {
 
   return (
     <div className="container-fluid shadow-lg rounded">
-      <h2 className="about-title text-start py-3">Administrar Productos</h2>
+      <h2 className="fw-light text-start py-3">Administrar Productos</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
