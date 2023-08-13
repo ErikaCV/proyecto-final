@@ -24,6 +24,7 @@ function LoginForm() {
 
     try {
       const result = await axios.post("http://localhost:5000/api/login", data)
+      console.log("data", data)
         console.log(result.data.role, result.data.name, result.data.image)
         
       if (result.data.msg === "Exitoso") {

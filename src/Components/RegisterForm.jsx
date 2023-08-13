@@ -1,33 +1,69 @@
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Swal from 'sweetalert2';
+import { useUserContext } from './UserContext';
 
 function RegisterForm() {
-  const { handleSubmit, control, formState: { errors }, reset } = useForm()
-  const navigate = useNavigate()
+  const { handleSubmit, control, formState: { errors }, reset } = useForm();
+  const navigate = useNavigate();
 
-  const [formMessage, setFormMessage] = useState('')
-  const [formError, setFormError] = useState('')
+  const [formMessage, setFormMessage] = useState('');
+  const [formError, setFormError] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
+  const { setUserData } = useUserContext();
+
+  const onImageSelect = (event) => {
+    setSelectedImage(event.target.files[0]);
+  };
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('http://localhost:5000/api/register', data)
-      setFormError('')
-      setFormMessage('Registro existoso')
-      reset()
+      const formData = new FormData();
+      formData.append('userName', data.userName);
+      formData.append('email', data.email);
+      formData.append('password', data.password);
+      if (selectedImage) {
+        formData.append('image', selectedImage);
+      }
 
+      await axios.post('http://localhost:5000/api/register', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      setFormError('');
+     
+      reset();
+      setSelectedImage(null);
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro Exitoso',
+        text: 'Has sido registrado correctamente.',
+        timer: 2000,
+        showConfirmButton: false
+      });
       setTimeout(() => {
-        setFormMessage('')
-        // navigate('/login')
-      }, 2000)
-      
-    } catch (err) {
-      setFormError('Ha ocurrido un error')
-      setFormMessage('')
-      console.log(err)
+        setFormMessage('');
+        setUserData({
+            name: data.userName,
+            image:data.image,
+            role: data.role
+        });
+        navigate('/');
+      }, 2000);
     }
-  }
+     catch (err) {
+      setFormError('Ha ocurrido un error');
+      setFormMessage('');
+      console.log(err);
+    }
+  };
+
 
   return (
     <div className='d-flex justify-content-center'>
@@ -122,12 +158,24 @@ function RegisterForm() {
               </p>
             )}
           </div>
+          <div className='mb-4'>
+            <label htmlFor='profileImage' className='form-label'>
+              Subir imagen de perfil (opcional):
+            </label>
+            <input
+              type='file'
+              id='profileImage'
+              accept='image/*'
+              onChange={onImageSelect}
+              className='form-control'
+            />
+          </div>
           {formMessage && <p className="p-2 rounded bg-success text-white">{formMessage}</p>}
           {formError && <p className="p-2 rounded bg-danger text-white">{formError}</p>}
           <div className='text-center mt-2'>
-            <button type='submit' className='btn btn-danger'>
+            <Button type='submit' variant='danger'>
               Registrarme
-            </button>
+            </Button>
           </div>
         </form>
         <p className='mb-0 mt-4 text-center'>¿Ya tienes una cuenta?</p>
@@ -144,4 +192,4 @@ function RegisterForm() {
   )
 }
 
-export default RegisterForm
+export default RegisterForm;

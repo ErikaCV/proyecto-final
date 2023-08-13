@@ -19,13 +19,13 @@ function UserDropdown({ userData }) {
     <NavDropdown
       title={
         userData.image ? (
-          <Image src={userData.image} alt={userData.name} width={40} roundedCircle />
+          <Image src={userData.image} alt={userData.name} width={50} roundedCircle />
         ) : (
           <FcManager className="fs-1" />
         )
       }
       id="basic-nav-dropdown"
-      className="bg-light border rounded-circle"
+      className=" rounded-circle"
     >
       <NavDropdown.Item>{userData.name}</NavDropdown.Item>
       <NavDropdown.Item>{userData.role}</NavDropdown.Item>
