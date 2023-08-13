@@ -83,7 +83,7 @@ export const CreateProduct = () => {
   return (
     <div className="container-fluid my-5 d-flex justify-content-center">
       <Form className="border p-3 rounded shadow-lg col-12 row">
-        <h2 className="about-title text-center mb-4">Agregar Nuevo Producto</h2>
+        <h2 className="text-start fw-light mb-4">Agregar Nuevo Producto</h2>
         <Form.Group className="mb-3 text-start fw-medium col-lg-6">
           <Form.Label>Título:</Form.Label>
           <Form.Control
