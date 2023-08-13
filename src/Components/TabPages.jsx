@@ -17,6 +17,7 @@ function NavPages() {
   const getProductContextValue = useContext(ProductContext);
   const token = JSON.parse(localStorage.getItem('token')) || ''
   const { products } = getProductContextValue();
+  
 
   const handleTabSelect = (tab) => {
     setActiveTab(tab);

@@ -53,7 +53,7 @@ function OfferCarousel() {
               <img
                 src={product.image}
                 alt={product.title}
-                className="d-block w-100 "
+                className="d-block w-60 "
                 style={{ maxHeight: '150px' }}
               />
               <Carousel.Caption>
