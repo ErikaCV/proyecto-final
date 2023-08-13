@@ -12,8 +12,10 @@ function Sales() {
       <div className="row-two rounded">
       <OfferCarousel/>
       </div>
-      <div className="col-one rounded">
+      <div className=" rounded">
+      <h1>Aqui iria una imagen</h1>
       <OfferCarousel/>
+      
       </div>
     </div>
   );
