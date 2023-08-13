@@ -53,11 +53,11 @@ function OfferCarousel() {
               <img
                 src={product.image}
                 alt={product.title}
-                className="d-block w-100 "
+                className="d-block w-100"
                 style={{ maxHeight: '150px' }}
               />
               <Carousel.Caption>
-                <h2 className='text-dark'>{product.title}</h2>
+                <h1 className='text-dark fw-light'>{product.title}</h1>
               </Carousel.Caption>
             </Link>
           </Carousel.Item>

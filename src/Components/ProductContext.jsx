@@ -82,15 +82,15 @@ export const ProductProvider = ({ children }) => {
           )
         );
       } else {
-        console.error("Error al actualizar el producto:", res.statusText);
+        // console.error("Error al actualizar el producto:", res.statusText);
       }
     } catch (error) {
-      console.error("Error en la petición de actualización:", error);
+      // console.error("Error en la petición de actualización:", error);
     }
   };
 
   const addProduct = async (formData) => {
-    console.log("GREKÑKA", formData);
+    // console.log("GREKÑKA", formData);
     try {
       const res = await fetch(`${URL}/products/create-product`, {
         method: "POST",
@@ -100,10 +100,10 @@ export const ProductProvider = ({ children }) => {
       if (res.ok) {
         console.log("Producto creado correctamente");
       } else {
-        console.error("Error al crear el producto:", res.statusText);
+        // console.error("Error al crear el producto:", res.statusText);
       }
     } catch (error) {
-      console.error("Error en la petición de creación:", error);
+      // console.error("Error en la petición de creación:", error);
     }
   };
 

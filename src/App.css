@@ -275,6 +275,7 @@
 /**ProductDetail**/
 .product-detail {
   margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.158);
   
 }
 
@@ -312,10 +313,6 @@
   font-weight: bold;
 }
 
-.product-button {
-  margin-top: 10px;
-}
-
 .product-image-col {
   display: flex;
   align-items: center;
@@ -351,6 +348,12 @@
 .product-quantity {
   margin-top: 20px;
   font-size: 18px;
+}
+
+@media screen and (min-width: 1024px) {
+  .product-quantity {
+   width: 35%;
+  }
 }
 
 .input-group {
