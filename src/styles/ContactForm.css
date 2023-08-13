@@ -1,12 +1,31 @@
 .cf-container {
+  background: url('../assets/images/ruta.jpg') no-repeat center center fixed;
+  background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em 6em;
-    background-color: #f0f2f5;
+    padding: 2em 16em;
+   
+    position: relative;
+    margin: 0 auto;
+
   }
   
+  .needs-validation-contact {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.25) inset, -5px -5px 0px 0px rgba(255, 255, 255, 0.25) inset;
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    padding: 2.5em;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+ 
+  }
+
   .cf-row {
     display: flex;
     flex-direction: column;
@@ -23,22 +42,22 @@
   
   .cf-row .cf-col .cf-map {
     margin-top: 2em;
-    width: 100%;
+    width: 50%;
     height: 400px;
     border-radius: 8px;
     overflow: hidden;
   }
   
-  .cf-form {
+  .map-container {
+    height: 100%;
+    /*para que el contenedor ocupe toda la altura disponible */
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    /* Centramos el mapa verticalmente dentro del contenedor */
   }
+
+
   
   .cf-form label {
     margin-top: 1em;
@@ -82,8 +101,41 @@
     .cf-row {
       flex-direction: row;
     }
+    .cf-col {
+      width: 100%;
+    }
+  
+    .map {
+      height: 500px;
+    }
   }
   
+  @media (min-width: 992px) {
+    .needs-validation-contact {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .cf-container {
+      padding: 2em 1em; /* Ajusta el padding para dispositivos móviles */
+    }
+    
+    .cf-row {
+      flex-direction: column; /* Cambia a una disposición vertical */
+    }
+    
+    .cf-col {
+      margin-bottom: 1em; /* Añade un espacio entre las columnas cuando están apiladas */
+    }
+    
+    .cf-map {
+      width: 100%; /* Ajusta el ancho del mapa para ocupar toda la anchura disponible */
+    }
+    
+    /* Añade cualquier otro estilo que necesites ajustar para dispositivos móviles aquí */
+  }
   
 
 
