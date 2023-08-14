@@ -547,12 +547,7 @@
     ,url("../src/assets/images/ruta.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2em 16em;
+    padding: 1em 0em;
 }
 
 .fw-medium-4 {
