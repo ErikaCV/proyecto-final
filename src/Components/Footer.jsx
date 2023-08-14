@@ -8,15 +8,15 @@ function Footer() {
 
         {   
             memberName: "Luis Lopez",
-            linkGithub: "https://github.com/Luis-LI",
-            linkLinkedin: "https://www.linkedin.com/in/",
+            linkGithub: "https://github.com/Luis-Ll",
+            linkLinkedin: "https://www.linkedin.com/in/luis-lopez-88342a237",
             altGithubIcon: "Logo del icono de GitHub",
             altLinkedinIcon: "Logo del icono de LinkedIn",
         },
         {   
             memberName: "Erika Cruz",
             linkGithub: "https://github.com/ErikaCV",
-            linkLinkedin: "https://www.linkedin.com/in/",
+            linkLinkedin: "https://www.linkedin.com/in/erika-johana-cruz-vallejo-09ab65276",
             altGithubIcon: "Logo del icono de GitHub",
             altLinkedinIcon: "Logo del icono de LinkedIn",
         },
@@ -33,9 +33,14 @@ function Footer() {
             linkLinkedin: "https://www.linkedin.com/in/francojnieva/",
             altGithubIcon: "Logo del icono de GitHub",
             altLinkedinIcon: "Logo del icono de LinkedIn",
+        },
+        {   
+            memberName: "Carlos Avanzini",
+            linkGithub: "https://github.com/carlosavanzini",
+            linkLinkedin: "https://www.linkedin.com/in/carlos-matias-avanzini-4b707b61/",
+            altGithubIcon: "Logo del icono de GitHub",
+            altLinkedinIcon: "Logo del icono de LinkedIn",
         }
-
-
     ]
 
     const element = members.map(e =>
@@ -54,10 +59,10 @@ function Footer() {
             <div className='mt-3 logo-container d-flex justify-content-center'>
                 <NavLink to="/"><img className="logo-app rounded-circle" src={imglogo} alt="logo de la app"/></NavLink>
             </div>
-            <div className='linksPage d-flex flex-column my-3 fw-medium'>
-                <NavLink to="/" className=' my-2 link-underline link-underline-opacity-0'><i className="bi bi-house-door-fill"></i> Inicio</NavLink>
-                <NavLink to="/about" className='my-2 link-underline link-underline-opacity-0'>Nosotros</NavLink>
-                <NavLink to="/contact" className='my-2 link-underline link-underline-opacity-0'>Contacto</NavLink>
+            <div className='linksPage d-flex flex-column my-3 fw-medium '>
+                <NavLink to="/" className=' my-2 link-underline link-underline-opacity-0 text-danger'><i className="bi bi-house-door-fill"></i> Inicio</NavLink>
+                <NavLink to="/about" className='my-2 link-underline link-underline-opacity-0 text-danger'>Nosotros</NavLink>
+                <NavLink to="/contact" className='my-2 link-underline link-underline-opacity-0 text-danger'>Contacto</NavLink>
             </div>
             <div className='mt-3'>
                 {element} 

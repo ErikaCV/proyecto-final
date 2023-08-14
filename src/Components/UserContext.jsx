@@ -52,6 +52,7 @@ export const UserProvider = ({ children }) => {
         });
 
         if (result.data.role === "admin") {
+                localStorage.setItem("token", JSON.stringify(result.data.token));
           navigate("/manageProducts");
         } else {
           navigate("/");

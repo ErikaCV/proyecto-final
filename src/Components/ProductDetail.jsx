@@ -4,6 +4,7 @@ import { CartContext } from "./CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faCartPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
 
 export const ProductDetail = ({ product: { id, image, title, description, stock, price } }) => {
   const { addToCart } = useContext(CartContext);
@@ -58,9 +59,13 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
                 </Button>
               </div>
               <div>
+              <Link to="/*"  >
+            
+            
                 <Button className="btn btn-success">
                   <FontAwesomeIcon icon={faShoppingCart} /> Comprar
                 </Button>
+                </Link>
               </div>
             </div>
           </Card.Body>
