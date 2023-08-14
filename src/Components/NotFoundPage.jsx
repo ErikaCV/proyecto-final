@@ -12,7 +12,7 @@ const NotFoundPage = () => {
       <p className="not-found-text">
         Lo sentimos, la página que estás buscando no existe.
       </p>
-      <Link to="/*" className="not-found-link text-dark my">
+      <Link to="/" className="not-found-link text-dark my">
       <FontAwesomeIcon icon={faStore} className="icon fs-2 text-dark" /> Volver a la tienda de motos
       </Link>
     </div>
