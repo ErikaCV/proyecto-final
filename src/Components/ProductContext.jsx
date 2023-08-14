@@ -6,7 +6,7 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  console.log("contextProducts", products);
+
 
   // const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
   const URL = "http://localhost:5000/api";
@@ -16,7 +16,7 @@ export const ProductProvider = ({ children }) => {
       try {
         const response = await getData(`${URL}/products`);
         const data = response.getProducts;
-        console.log("data", data);
+       
         const transformedProducts = data.map((product) => ({
           id: product._id, //
           title: product.title,
@@ -28,7 +28,7 @@ export const ProductProvider = ({ children }) => {
         }));
 
         setProducts(transformedProducts);
-        console.log("api response", data);
+        
       } catch (error) {
         console.error("Error fetching products:", error);
       }
