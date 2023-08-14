@@ -24,27 +24,28 @@ export const IconCart = () => {
   };
 
   return (
-    <Dropdown>
+    <Dropdown className='number-cart-container'>
       <Dropdown.Toggle variant="link" id="dropdown-basic">
-        <span className="iconCart badge rounded-pill badge-notification bg-danger">
+        <span className="iconCart badge rounded-pill badge-notification">
           {totalProductos}
         </span>
-        <FaOpencart className="text-light fs-1 pt-3 pe-0 border-0" onClick={toggleResumen} />
+        <FaOpencart className="text-light  pt-3 pe-0 border-0 open-cart-icon" onClick={toggleResumen} />
       </Dropdown.Toggle>
 
       <Dropdown.Menu show={mostrarResumen}>
-        <div className="resumenCarrito">
+        <div className="resumenCarrito p-4">
           <h4>Resumen del carrito</h4>
           <hr />
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
+              
               <div key={item.id} className="productoCarrito d-flex mb-3">
                 <img src={item.image} alt={item.title} className="productoCarrito-img" />
                 <div className="productoCarrito-info p-2">
                   <p className="">{item.title}</p>
-                  <span>Cantidad: {item.quantity}</span> 
+                  <span className='fw-bolder'>Cantidad: {item.quantity}</span> 
                 </div>
-                <span className="ms-auto p-2">${item.price * item.quantity}</span> 
+                <span className="ms-auto p-2 fw-bolder">${item.price * item.quantity}</span> 
                 <div className='d-flex align-items-start flex-column mb-5'>
                 <TiDeleteOutline className="deleteIcon " onClick={() => removeFromCart(item.id)} />
                 </div>
@@ -55,8 +56,8 @@ export const IconCart = () => {
           )}
           <hr />
           <div className="d-flex justify-content-between">
-            <h6>Total</h6>
-            <span>${calcularTotal()}</span>
+            <h6 className='fw-bolder'>Total</h6>
+            <span className='fw-bolder'>${calcularTotal()}</span>
           </div>
           <div className="accionesCarrito">
             <button className="btn btn-primary">Comprar</button>

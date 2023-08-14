@@ -1,59 +1,30 @@
-import About from "../assets/images/About/About.jpg";
-import { Image } from "react-bootstrap";
-import Card from 'react-bootstrap/Card';
-import fullstack from "../assets/images/About/fullstack.jpg"
-import { UsersAbout } from "./UsersAbout";
+import { UsersAbout } from "./UsersAbout.jsx";
+import Testimony from "./Testimony.jsx";
+import BreadcrumbPages from "./Breadcrumb.jsx";
 
 function AboutPage() {
-  const firstDivHeight = 300; 
 
   return (
     <>
-      <div className="container pt-2">
-        <h1 className="text-center about-title">Acerca de nosotros</h1>
-        <hr />
-
-        <div className="box-about row justify-content-center">
-          <div className="col-lg-6 col-md-8 col-sm-12" style={{ position: 'relative', height: `${firstDivHeight}px` }}>
-            <div>
-              <Image src={About} className="rounded img-main" fluid />
-            </div>
-          </div>
-          <div className="text-about col-lg-6 col-md-4 col-sm-12 institution-div" style={{ position: 'relative', top: `${firstDivHeight / 2}px` }}>
-            <div >
-              <h3>Nuestra Institución</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium beatae officia ut ab sed exercitationem laborum cupiditate perspiciatis minus esse maiores tempora aut enim iusto omnis hic, deleniti earum in?</p>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam!</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <Card className="col-lg-4 col-md-6 col-sm-12 border-0 p-5 cardAbout">
-            <Card.Img variant="top" className="rounded" src={fullstack} />
-            <Card.Body>
-              <h3>Crece con Nosotros</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem.</p>
-            </Card.Body>
-          </Card> 
-          <Card className="col-lg-4 col-md-6 col-sm-12 border-0 p-5 cardAbout">
-            <Card.Img variant="top" className="rounded" src={fullstack} />
-            <Card.Body>
-              <h3>Crece con Nosotros</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem.</p>
-            </Card.Body>
-          </Card> 
-          <Card className="col-lg-4 col-md-6 col-sm-12 border-0 p-5 cardAbout">
-            <Card.Img variant="top" className="rounded" src={fullstack} />
-            <Card.Body>
-              <h3>Crece con Nosotros</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem.</p>
-            </Card.Body>
-          </Card> 
-        </div>
-
-        <UsersAbout />
+    
+    <BreadcrumbPages/>
+    <div className="py-4 ">
+    <div className="container">
+      <h1 className="text-start fw-light pb-3" >Nuestro Equipo</h1>
+      <p className="container text-start fw-medium fs-5"> Somos un grupo de entusiastas estudiantes de desarrollo web, compartimos el objetivo común de crecer como desarrolladores.</p>
+      <UsersAbout />
       </div>
+      <div className="institution-container d-flex flex-column justify-content-center aling-items-center text-center pt-5 px-2 px-lg-5">
+        <h2 className="mb-3 fw-bolder">Nuestra Institución</h2>
+        <p className="fw-medium container">En <span className="text-danger fw-bolder">Rolling Code School</span>, nos encontramos ante una emocionante oportunidad de desarrollo personal y profesional, donde la pasión por la programación se fusiona con un ambiente colaborativo y una comunidad que nos impulsa a crecer.</p>
+        <p className="fw-medium container">Durante el curso, hemos adquirido una base en desarrollo web. A lo largo de los meses, estudiamos diferentes tecnologías: HTML5, CSS3, Bootstrap, JavaScript, ReactJS, Express, NodeJS y MongoDB. Además metodologías ágiles como SCRUM, controlar versiones de código a través de Git y GitHub y gestional tareas con Trello.</p>
+        <p></p>
+      </div>
+      <div className="container">
+      <h2 className=" text-start fw-light">Testimonios</h2>
+      <Testimony/>
+      </div>
+    </div>
     </>
   );
 }

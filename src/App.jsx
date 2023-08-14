@@ -1,10 +1,11 @@
 
 import './App.css'
-import NavPages from './components/TabPages'
-import { ProductProvider } from './components/ProductContext'
-import NavBar from './components/Navbar'
+import NavPages from './Components/TabPages'
+import { ProductProvider } from './Components/ProductContext.jsx'
+import NavBar from './Components/Navbar'
 import { CartProvider } from './Components/CartContext'
-
+import Footer from './Components/Footer'
+import { UserProvider } from './Components/UserContext'
 
 
 function App() {
@@ -12,12 +13,15 @@ function App() {
 
   return (
     <>
+    <UserProvider>
     <ProductProvider >
       <CartProvider>
     <NavBar/>
     <NavPages/> 
     </CartProvider>
     </ProductProvider>
+    </UserProvider>
+    <Footer/>
     
     </>
   )
