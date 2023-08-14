@@ -42,8 +42,8 @@ const ContactForm = () => {
   return (
     <div>
       <div className="cf-container">
-      <h2 className="text-center fw-bolder pt-4">Contacto</h2>
-      <p className='fw-medium px-3'>Completa el siguiente formulario y nos pondremos en contacto lo antes posible. Muchas gracias.</p>
+      <h2 className="text-center fw-bolder-4 pt-4">Contacto</h2>
+      <p className='fw-medium-4 px-3'>Completa el siguiente formulario y nos pondremos en contacto lo antes posible. Muchas gracias.</p>
       <form className="cf-form my-4" onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="name"
