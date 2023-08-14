@@ -10,6 +10,7 @@ import ProductManagement from "./ProductManagement";
 import LoginForm from './LoginForm';
 import { ProductContext } from './ProductContext';
 import RegisterForm from './RegisterForm';
+import NotFoundPage from './NotFoundPage';
 
 
 function NavPages() {
@@ -72,6 +73,7 @@ function NavPages() {
         <Route path="/manageProducts" element={<ProductManagement />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </>
   );

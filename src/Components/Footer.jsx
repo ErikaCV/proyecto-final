@@ -59,10 +59,10 @@ function Footer() {
             <div className='mt-3 logo-container d-flex justify-content-center'>
                 <NavLink to="/"><img className="logo-app rounded-circle" src={imglogo} alt="logo de la app"/></NavLink>
             </div>
-            <div className='linksPage d-flex flex-column my-3 fw-medium'>
-                <NavLink to="/" className=' my-2 link-underline link-underline-opacity-0'><i className="bi bi-house-door-fill"></i> Inicio</NavLink>
-                <NavLink to="/about" className='my-2 link-underline link-underline-opacity-0'>Nosotros</NavLink>
-                <NavLink to="/contact" className='my-2 link-underline link-underline-opacity-0'>Contacto</NavLink>
+            <div className='linksPage d-flex flex-column my-3 fw-medium '>
+                <NavLink to="/" className=' my-2 link-underline link-underline-opacity-0 text-danger'><i className="bi bi-house-door-fill"></i> Inicio</NavLink>
+                <NavLink to="/about" className='my-2 link-underline link-underline-opacity-0 text-danger'>Nosotros</NavLink>
+                <NavLink to="/contact" className='my-2 link-underline link-underline-opacity-0 text-danger'>Contacto</NavLink>
             </div>
             <div className='mt-3'>
                 {element} 
