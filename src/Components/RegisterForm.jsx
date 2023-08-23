@@ -76,7 +76,7 @@ function RegisterForm() {
         setTimeout(() => {
           setFormMessage("");
 
-          navigate("/login");
+          navigate("/");
         }, 2000);
       }
     } catch (err) {
