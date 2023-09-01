@@ -561,3 +561,17 @@
   font-weight: bold;
 }
 
+/* NOT FOUND PAGE */
+
+@media screen and (min-width: 320px) {
+  .not-found-image {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .not-found-image {
+    width: 30%;
+  }
+}
+
