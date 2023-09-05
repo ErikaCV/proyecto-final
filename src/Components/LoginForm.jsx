@@ -17,9 +17,8 @@ function LoginForm() {
     try {
       await login(data.email, data.password);
     } catch (err) {
-      setFormError('Ha ocurrido un error');
+      setFormError('Por favor, verifique sus credenciales para iniciar sesión');
       setFormMessage('');
-      console.log(err);
     }
   };
 

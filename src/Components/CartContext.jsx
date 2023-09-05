@@ -7,7 +7,6 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-
     const loadCartFromLocalStorage = () => {
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
@@ -19,10 +18,7 @@ export const CartProvider = ({ children }) => {
     loadCartFromLocalStorage();
   }, []);
 
-
-
   const addToCart = (product) => {
-    console.log("stock", product)
     const existingItem = cartItems.find((item) => item.id === product.id);
     
     if (product.quantity > product.stock) {
