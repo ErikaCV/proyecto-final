@@ -9,16 +9,12 @@ export const ShopPage = ({ category: propCategory }) => {
   const { products,} = getProductContextValue();
   const { category: urlCategory } = useParams();
 
-  // console.log("categoria", propCategory)
   const selectedCategory = propCategory || urlCategory;
   
-
-
   const filteredProducts = selectedCategory
     ? products.filter((product) => product.category.toLowerCase() === selectedCategory.toLowerCase())
     : products;
    
-
   return (
     <>
       <div className="container-fluid">

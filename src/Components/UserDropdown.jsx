@@ -8,8 +8,6 @@ import { useUserContext } from './UserContext';
 function UserDropdown({ userData }) {
   const { logout } = useUserContext();
  
-
-
   const handleLogout = () => {
     logout();
   

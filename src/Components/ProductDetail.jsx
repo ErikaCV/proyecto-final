@@ -62,8 +62,6 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
               </div>
               <div>
               <Link to="/*"  >
-            
-            
                 <Button className="btn btn-success">
                   <FontAwesomeIcon icon={faShoppingCart} /> Comprar
                 </Button>

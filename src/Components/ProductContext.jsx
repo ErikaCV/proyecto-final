@@ -1,15 +1,12 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getData } from "../Utils/Function";
-import { API_PRACTICE } from "../Utils/Constants";
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
-
-  // const URL = API_PRACTICE.FAKESTOREAPI_PRODUCTS;
-  const URL = "http://localhost:5000/api";
+ const URL = "http://localhost:5000/api";
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -18,7 +15,7 @@ export const ProductProvider = ({ children }) => {
         const data = response.getProducts;
        
         const transformedProducts = data.map((product) => ({
-          id: product._id, //
+          id: product._id,
           title: product.title,
           category: product.category,
           description: product.description,
@@ -50,7 +47,6 @@ export const ProductProvider = ({ children }) => {
         setProducts((prevProducts) =>
           prevProducts.filter((product) => product.id !== productId)
         );
-        console.log("Producto eliminado correctamente.");
       } else {
         console.error("Error al eliminar el producto:", res.statusText);
       }
@@ -74,15 +70,12 @@ export const ProductProvider = ({ children }) => {
       });
 
       if (res.ok) {
-        console.log("Producto actualizado:", updatedProduct);
 
         setProducts((prevProducts) =>
           prevProducts.map((product) =>
             product.id === productId ? updatedProduct : product
           )
         );
-      } else {
-        
       }
     } catch (error) {
    
@@ -96,12 +89,6 @@ export const ProductProvider = ({ children }) => {
         method: "POST",
         body: formData,
       });
-
-      if (res.ok) {
-        console.log("Producto creado correctamente");
-      } else {
-        
-      }
     } catch (error) {
       
     }
