@@ -11,7 +11,6 @@ function Testimony() {
       axios.get("http://localhost:5000/api/testimony")
       
       .then((response) => {
-        // console.log("Datos recibidos del backend:", response.data);
         setTestimonyData(response.data);
       })
       .catch((error) => console.error("Error al obtener los datos:", error))

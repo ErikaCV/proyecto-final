@@ -50,13 +50,15 @@ const ContactForm = () => {
           control={control}
           rules={{
             required: 'El nombre es requerido',
-            minLength: { value: 2, message: 'El nombre debe tener al menos 2 caracteres' },
+            minLength: { value: 4, message: 'El nombre debe tener entre 4 y 20 caracteres' },
             maxLength: { value: 20, message: 'El apellido no puede tener más de 20 caracteres' },
           }}
           render={({ field }) => (
             <div>
               <input
                 {...field}
+                minLength="4"
+                maxLength="20"
                 placeholder="Nombre"
                 autoComplete="off"
                 type="text"
@@ -71,13 +73,15 @@ const ContactForm = () => {
           control={control}
           rules={{
             required: 'El apellido es requerido',
-            minLength: { value: 2, message: 'El apellido debe tener al menos 2 caracteres' },
+            minLength: { value: 4, message: 'El apellido debe tener entre 4 y 20 caracteres' },
             maxLength: { value: 20, message: 'El apellido no puede tener más de 20 caracteres' },
           }}
           render={({ field }) => (
             <div>
               <input
                 {...field}
+                minLength="4"
+                maxLength="20"
                 placeholder="Apellido"
                 autoComplete="off"
                 type="text"
@@ -121,6 +125,7 @@ const ContactForm = () => {
             <div>
               <textarea
                 {...field}
+                maxLength="250"
                 placeholder="Deja tu mensaje"
                 autoComplete="off"
                 className="form-control required"

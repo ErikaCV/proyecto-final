@@ -1,7 +1,4 @@
 import Carousel from 'react-bootstrap/Carousel';
-// import motoUno from '../assets/images/moto1.jpg';
-// import motoDos from '../assets/images/moto2.jpg';
-// import motoTres from '../assets/images/moto3.jpg';
 import slider1 from '../assets/images/img-slider/slider1.webp';
 import slider2 from '../assets/images/img-slider/slider2.webp';
 import slider3 from '../assets/images/img-slider/slider3.webp';
@@ -18,7 +15,6 @@ function Slider() {
             alt="First slide"
           />
           <Carousel.Caption>
-
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={3000}>
@@ -28,7 +24,6 @@ function Slider() {
             alt="Second slide"
           />
           <Carousel.Caption>
-
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -38,7 +33,6 @@ function Slider() {
             alt="Third slide"
           />
           <Carousel.Caption>
-
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

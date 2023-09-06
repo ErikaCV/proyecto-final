@@ -76,7 +76,7 @@ function RegisterForm() {
         setTimeout(() => {
           setFormMessage("");
 
-          navigate("/login");
+          navigate("/");
         }, 2000);
       }
     } catch (err) {
@@ -101,7 +101,7 @@ function RegisterForm() {
                 minLength: {
                   value: 3,
                   message:
-                    "El nombre de usuario debe tener al menos 3 caracteres",
+                    "El nombre de usuario debe tener entre 3 y 20 caracteres",
                 },
                 maxLength: {
                   value: 20,
@@ -111,6 +111,8 @@ function RegisterForm() {
               }}
               render={({ field }) => (
                 <input
+                  minLength="3"
+                  maxLength="20"
                   type="text"
                   placeholder="Nombre de usuario"
                   autoComplete="off"
@@ -163,6 +165,7 @@ function RegisterForm() {
               }}
               render={({ field }) => (
                 <input
+                  minLength="10"
                   type="password"
                   placeholder="Contraseña"
                   autoComplete="off"

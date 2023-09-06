@@ -11,7 +11,7 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
-    const newQuantity = quantity + 1;
+    const newQuantity = quantity;
     if (newQuantity > stock) {
       Swal.fire({
         icon: 'error',
@@ -42,13 +42,15 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
             <div className="product-price text-start">
               <p className="price-label">Precio:</p>
               <h3 className="product-price-value">${price}</h3>
+              <p className="price-label mt-3">Stock:</p>
+              <h3 className="product-price-value">{stock}</h3>
             </div>
             <div className="product-quantity mt-4 d-flex align-items-center">
               <button className="quantity-button" onClick={() => handleQuantityChange(-1)}>
                 <FontAwesomeIcon icon={faMinus} />
               </button>
               <input type="text" className="form-control quantity-input mx-2" value={quantity} readOnly />
-              <button className="quantity-button" onClick={() => handleQuantityChange(1)}>
+              <button className="quantity-button" onClick={() => handleQuantityChange(1)} disabled={quantity >= stock}>
                 <FontAwesomeIcon icon={faPlus} />
               </button>
             </div>
@@ -60,8 +62,6 @@ export const ProductDetail = ({ product: { id, image, title, description, stock,
               </div>
               <div>
               <Link to="/*"  >
-            
-            
                 <Button className="btn btn-success">
                   <FontAwesomeIcon icon={faShoppingCart} /> Comprar
                 </Button>

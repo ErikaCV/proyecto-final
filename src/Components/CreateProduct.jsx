@@ -76,10 +76,6 @@ export const CreateProduct = () => {
     });
   };
 
-  useEffect(() => {
-    console.log("nuevo producto", newProduct);
-  }, [newProduct]);
-
   return (
     <div className="container-fluid my-5 d-flex justify-content-center">
       <Form className="border p-3 rounded shadow-lg col-12 row">
