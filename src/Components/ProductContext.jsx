@@ -6,7 +6,7 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
- const URL = "http://localhost:5000/api";
+ const URL = "https://motofly-deploy-app.onrender.com/api";
 
   useEffect(() => {
     const fetchProducts = async () => {
