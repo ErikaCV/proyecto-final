@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const result = await axios.post("http://localhost:5000/api/login", {
+      const result = await axios.post("https://motofly-deploy-app.onrender.com/api/login", {
         email,
         password,
       });

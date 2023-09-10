@@ -11,7 +11,7 @@ function ManageUsers() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/users'); // Endpoint para obtener usuarios
+      const response = await axios.get('https://motofly-deploy-app.onrender.com/api/users'); // Endpoint para obtener usuarios
       setUsers(response.data);
     } catch (error) {
       console.error('Error al obtener la lista de usuarios', error);
@@ -20,7 +20,7 @@ function ManageUsers() {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${userId}`); // Endpoint para eliminar usuario
+      await axios.delete(`https://motofly-deploy-app.onrender.com/api/users/${userId}`); // Endpoint para eliminar usuario
       fetchUsers(); // Actualizar la lista después de eliminar
     } catch (error) {
       console.error('Error al eliminar usuario', error);

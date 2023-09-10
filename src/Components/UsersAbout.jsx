@@ -8,7 +8,7 @@ export const UsersAbout = () => {
   const [aboutData, setAboutData] = useState([])
 
     useEffect(() => {
-      axios.get("http://localhost:5000/api/about-us")
+      axios.get("https://motofly-deploy-app.onrender.com/api/about-us")
       
       .then((response) => {
         setAboutData(response.data);
@@ -29,7 +29,7 @@ export const UsersAbout = () => {
             <div className="circle"></div>
             <div className="card-inner p-3" > 
               <div className="d-flex justify-content-center">
-                <img className="w-75 rounded-circle" src={`http://localhost:5000/images/${data.profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
+                <img className="w-75 rounded-circle" src={`https://motofly-deploy-app.onrender.com/images/${data.profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
               </div>
               <h3 className="mt-2">{data.name}</h3>
               <p>{data.description}</p>

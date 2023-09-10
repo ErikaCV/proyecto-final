@@ -34,7 +34,7 @@ function RegisterForm() {
         formData.append("image", selectedImage);
       }
 
-      await axios.post("http://localhost:5000/api/register", formData, {
+      await axios.post("https://motofly-deploy-app.onrender.com/api/register", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -52,7 +52,7 @@ function RegisterForm() {
         timer: 2000,
         showConfirmButton: false,
       });
-      const result = await axios.post("http://localhost:5000/api/login", {
+      const result = await axios.post("https://motofly-deploy-app.onrender.com/api/login", {
         email: data.email,
         password: data.password,
       });
