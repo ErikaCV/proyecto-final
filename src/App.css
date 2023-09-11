@@ -547,12 +547,7 @@
     ,url("../src/assets/images/ruta.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2em 16em;
+    padding: 1em 0em;
 }
 
 .fw-medium-4 {
@@ -564,5 +559,19 @@
 .fw-bolder-4 {
   color: #f7f7f7;
   font-weight: bold;
+}
+
+/* NOT FOUND PAGE */
+
+@media screen and (min-width: 320px) {
+  .not-found-image {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .not-found-image {
+    width: 30%;
+  }
 }
 

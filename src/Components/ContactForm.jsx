@@ -24,7 +24,7 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
    
     try {
-      await axios.post('http://localhost:5000/api/contact', data)
+      await axios.post('https://motofly-deploy-app.onrender.com/api/contact', data)
       setFormError('')
       setFormMessage('Datos enviados')
       reset()
@@ -50,13 +50,15 @@ const ContactForm = () => {
           control={control}
           rules={{
             required: 'El nombre es requerido',
-            minLength: { value: 2, message: 'El nombre debe tener al menos 2 caracteres' },
+            minLength: { value: 4, message: 'El nombre debe tener entre 4 y 20 caracteres' },
             maxLength: { value: 20, message: 'El apellido no puede tener más de 20 caracteres' },
           }}
           render={({ field }) => (
             <div>
               <input
                 {...field}
+                minLength="4"
+                maxLength="20"
                 placeholder="Nombre"
                 autoComplete="off"
                 type="text"
@@ -71,13 +73,15 @@ const ContactForm = () => {
           control={control}
           rules={{
             required: 'El apellido es requerido',
-            minLength: { value: 2, message: 'El apellido debe tener al menos 2 caracteres' },
+            minLength: { value: 4, message: 'El apellido debe tener entre 4 y 20 caracteres' },
             maxLength: { value: 20, message: 'El apellido no puede tener más de 20 caracteres' },
           }}
           render={({ field }) => (
             <div>
               <input
                 {...field}
+                minLength="4"
+                maxLength="20"
                 placeholder="Apellido"
                 autoComplete="off"
                 type="text"
@@ -121,6 +125,7 @@ const ContactForm = () => {
             <div>
               <textarea
                 {...field}
+                maxLength="250"
                 placeholder="Deja tu mensaje"
                 autoComplete="off"
                 className="form-control required"
@@ -140,8 +145,8 @@ const ContactForm = () => {
         <p className='fw-medium'>Nuestra sede central está ubicada en el corazón de Tucumán en Barrio Sur, lo que nos permite operar de manera eficiente y estar cerca de nuestros clientes y proveedores.</p>
         <p className='fw-medium'>Es fácilmente accesible desde cualquier parte de la ciudad. Los amantes de las dos ruedas pueden explorar una amplia variedad de motocicletas de diferentes marcas y modelos.</p>
       </div>
-      <div className='iframe-container'>
-        <iframe className='container-fluid' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113927.31384044558!2d-65.30499577997975!3d-26.83268184590282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223792d6c56903%3A0xf88d5b92b5c56527!2sSan%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1691084125840!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div className='iframe-container '>
+        <iframe className='container-fluid rounded' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113927.31384044558!2d-65.30499577997975!3d-26.83268184590282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223792d6c56903%3A0xf88d5b92b5c56527!2sSan%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1691084125840!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>

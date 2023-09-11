@@ -11,20 +11,12 @@ export const ProductDetailContainer = () => {
 
   const { products,} = getProductContextValue();
 
-  // console.log("container", products)
-
- 
   const filterProductById = (productId) => {
-    // console.log("id detalles", productId)
     return products.find((product) => product.id === productId);
-    // console.log("producto filtrado", product)
   };
 
- 
-  const product =
-    location.state?.product || (id ? filterProductById(id) : null);
+  const product = location.state?.product || (id ? filterProductById(id) : null);
     
-  
   return (
     <div className="container">
       <BreadcrumbPages/>

@@ -4,7 +4,6 @@ import BreadcrumbPages from "./Breadcrumb";
 
 export const ListProduct = (props) =>{
 const {products} = props
-// console.log("lista de productos", props)
 
     return(
         <>

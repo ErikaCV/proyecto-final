@@ -4,6 +4,7 @@ import { FaOpencart } from 'react-icons/fa';
 import { Dropdown } from 'react-bootstrap';
 import { CartContext } from './CartContext';
 import { TiDeleteOutline } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 
 export const IconCart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
@@ -60,7 +61,9 @@ export const IconCart = () => {
             <span className='fw-bolder'>${calcularTotal()}</span>
           </div>
           <div className="accionesCarrito">
+            <Link to="/*"  >
             <button className="btn btn-primary">Comprar</button>
+            </Link>
             <button  className="btn btn-danger" onClick={clearCart}>Vaciar Carrito</button>
           </div>
         </div>

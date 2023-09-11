@@ -17,17 +17,17 @@ function LoginForm() {
     try {
       await login(data.email, data.password);
     } catch (err) {
-      setFormError('Ha ocurrido un error');
+      setFormError('Por favor, verifique sus credenciales para iniciar sesión');
       setFormMessage('');
-      console.log(err);
     }
   };
 
   return (
     <div className='d-flex justify-content-center align-items-center'>
+      <div className='color-base'></div>
       <div className='form-container m-4 col col-md-9 col-lg-6'>
         <h2 className='mb-4 fw-bolder'>Iniciar sesión</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className='form-login' onSubmit={handleSubmit(onSubmit)}>
           <div className='mb-4'>
             <Controller
               name='email'
@@ -70,6 +70,7 @@ function LoginForm() {
               }}
               render={({ field }) => (
                 <input
+                  minLength="10"
                   type='password'
                   placeholder='Contraseña'
                   autoComplete='off'

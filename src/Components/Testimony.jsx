@@ -8,10 +8,9 @@ function Testimony() {
     const [testimonyData, setTestimonyData] = useState([])
 
     useEffect(() => {
-      axios.get("http://localhost:5000/api/testimony")
+      axios.get("https://motofly-deploy-app.onrender.com/api/testimony")
       
       .then((response) => {
-        // console.log("Datos recibidos del backend:", response.data);
         setTestimonyData(response.data);
       })
       .catch((error) => console.error("Error al obtener los datos:", error))
@@ -27,7 +26,7 @@ function Testimony() {
         <div key={data._id} className="testimony-container" data-aos="fade-up" data-aos-duration="1200">
           <Card className="mb-4 card pt-2 px-0" style={{ width: '18rem' }}>
             <div className="d-flex justify-content-center">
-              <Card.Img variant="top" className="w-75 rounded-circle" src={`http://localhost:5000/images/${data. profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
+              <Card.Img variant="top" className="w-75 rounded-circle" src={`https://motofly-deploy-app.onrender.com/images/${data. profileImg}`} alt={`foto de perfil de ${data.name}`} title={data.name} />
             </div>
             <Card.Body>
               <Card.Title>{data.name}</Card.Title>
