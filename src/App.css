@@ -103,6 +103,11 @@
   .boxSearch{
     width: 30%;
   }
+
+  .search-icon-container {
+    margin-right: 5rem;
+  }
+
 }
 .iconCart{
   background-color: #c40c2e;
@@ -130,6 +135,9 @@
 
 .banner {
   width: 100%;
+  @media (min-width: 900px) {
+    height: 30vh;
+  }
 }
 
 
@@ -575,3 +583,14 @@
   }
 }
 
+/* LOGIN */
+
+.login-container {
+  min-height: 100vh;
+}
+
+/* REGISTER */
+
+.register-container {
+  min-height: 100vh;
+}
