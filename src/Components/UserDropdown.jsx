@@ -10,7 +10,6 @@ function UserDropdown({ userData }) {
  
   const handleLogout = () => {
     logout();
-  
   };
 
   return (

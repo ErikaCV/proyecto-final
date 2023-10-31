@@ -37,15 +37,62 @@ export const CreateProduct = () => {
     if (
       newProduct.title.trim() === "" ||
       newProduct.description.trim() === "" ||
-      newProduct.price <= 0 ||
+      isNaN(newProduct.price) ||
       newProduct.category.trim() === "" ||
       newProduct.image === null ||
-      newProduct.stock < 0
+      isNaN(newProduct.stock)
     ) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Por favor complete todos los campos correctamente.",
+        text: "Por favor complete todos los campos",
+      })
+      return
+    }
+
+    if (newProduct.title.length > 20) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El título debe tener menos de 30 caracteres",
+      })
+      return
+    }
+
+    const regexStock = /^[1-9]\d*$/
+    if (!regexStock.test(newProduct.stock)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El stock debe ser un número entero positivo",
+      })
+      return
+    }
+
+    const regexPrice = /^[1-9]\d*(\.\d+)?$/
+    if (!regexPrice.test(newProduct.price)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El precio debe ser mayor a cero. Si no es un entero, asegurate de que termine con al menos un dígito después del punto",
+      });
+      return;
+    }
+
+    if (newProduct.description.length > 250 ) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "La descripción debe tener menos de 250 caracteres",
+      })
+      return
+    }
+
+    if (newProduct.category.length > 15 ) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "La categoría debe tener menos de 15 caracteres",
       })
       return
     }
@@ -65,14 +112,15 @@ export const CreateProduct = () => {
       title: "",
       description: "",
       price: 0,
-      image: null,
       category: "",
+      image: null,
+      stock: 0
     });
     Swal.fire({
       icon: "success",
       title: "Producto creado correctamente",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 3000,
     });
   };
 
@@ -84,6 +132,8 @@ export const CreateProduct = () => {
           <Form.Label>Título:</Form.Label>
           <Form.Control
             type="text"
+            autoComplete="off"
+            maxLength={ 20 }
             name="title"
             value={newProduct.title}
             onChange={handleInputChange}
@@ -116,6 +166,8 @@ export const CreateProduct = () => {
           <Form.Label>Descripción:</Form.Label>
           <Form.Control
             type="text"
+            autoComplete="off"
+            maxLength={ 250 }
             name="description"
             value={newProduct.description}
             onChange={handleInputChange}
@@ -136,6 +188,8 @@ export const CreateProduct = () => {
           <Form.Label>Categoría:</Form.Label>
           <Form.Control
             type="text"
+            autoComplete="off"
+            maxLength={ 15 }
             name="category"
             value={newProduct.category}
             onChange={handleInputChange}
