@@ -6,8 +6,8 @@ import Swal from "sweetalert2";
 export const CreateProduct = () => {
   const getProductContextValue = useContext(ProductContext);
 
-  const { addProduct } = getProductContextValue();
-
+  const { addProduct, products, setProducts } = getProductContextValue();
+  
   const [newProduct, setNewProduct] = useState({
     title: "",
     description: "",
@@ -107,6 +107,8 @@ export const CreateProduct = () => {
     formData.append('stock', newProduct.stock);
 
     await addProduct(formData);
+    
+    setProducts([...products, newProduct]);
 
     setNewProduct({
       title: "",
@@ -123,7 +125,7 @@ export const CreateProduct = () => {
       timer: 3000,
       
     });
-    window.location.reload();
+    
   };
 
   return (

@@ -96,6 +96,7 @@ export const ProductProvider = ({ children }) => {
 
   const getProductContextValue = () => ({
     products,
+    setProducts,
     deleteProduct,
     editProduct,
     addProduct,
