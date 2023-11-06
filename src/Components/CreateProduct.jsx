@@ -121,7 +121,9 @@ export const CreateProduct = () => {
       title: "Producto creado correctamente",
       showConfirmButton: false,
       timer: 3000,
+      
     });
+    window.location.reload();
   };
 
   return (
